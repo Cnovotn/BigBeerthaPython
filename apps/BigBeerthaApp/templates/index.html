@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Big Beertha</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
-    <script src="./main.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </head>
 <body>
+    <!-- {% csrf_token %} -->
     <div id="mainContainer">
         <h1>Hello Big Bertha</h1>
         <div id="header">
