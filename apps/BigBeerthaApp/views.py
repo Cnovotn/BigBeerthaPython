@@ -2,10 +2,30 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, HttpResponse
+from instagram.client import InstagramAPI
+from jinja2 import Template
+import requests, json, config
 # import shopify
 
 def index(request):
-    return render(request, "index.html")
+    # only returns 20 of the most recent media instances
+    route = "https://api.instagram.com/v1/users/self/media/recent/?access_token=" + config.api_key 
+    all_media = requests.get(route)
+    json_media = all_media.json()
+    json_data = json_media["data"]
+    new_json_data_images = []
+    new_json_data_videos = []
+    for data in json_data:
+        if data["type"] == "image":
+            new_json_data_images.append(data["images"]["standard_resolution"]["url"])
+        elif data["type"] == "video":
+            new_json_data_videos.append(data["videos"]["standard_resolution"]["url"])
+    context = {
+        "images" : new_json_data_images,
+        "videos" : new_json_data_videos
+    }
+
+    return render(request, "index.html", context)
 
 # # Replace the following with your shop URL
 # shop_url = "https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin"

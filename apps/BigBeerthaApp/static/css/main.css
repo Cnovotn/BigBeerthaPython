@@ -2,3 +2,16 @@
     margin: 0;
     padding: 0;
 }
+
+.singleInstagramImage{
+    width: 3%;
+}
+
+.singleInstagramVideo{
+
+}
+
+.instagramMedia{
+    width: 100%;
+    background-color: aqua;
+}

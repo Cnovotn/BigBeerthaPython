@@ -9,8 +9,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </head>
+<style>
+.singleInstagramImage{
+    width: 30%;
+    margin: 1.5%;
+}
+
+.singleInstagramVideo{
+
+}
+
+.instagramMedia{
+    width: 100%;
+}
+</style>
 <body>
-    <!-- {% csrf_token %} -->
     <div id="mainContainer">
         <h1>Hello Big Bertha</h1>
         <div id="header">
@@ -24,13 +37,38 @@
              -->
         </div>
         <div id="contentContainer">
+            <div id="homePageInfo" class="infoContainer">
+
+            </div>
+            <div id="aboutContainer" class="infoContainer">
+
+            </div>
+            <div id="contactContainer" class="infoContainer">
+
+            </div>
 
         </div>
-        <div id="beerthaFooter">
-
+        <div id="instagramImages" class="instagramMedia">
+            {% for key in images %}
+            <img src="{{key}}" class="singleInstagramImage">
+            {% endfor%}
         </div>
-        <div id="ronovoFooter">
-
+        <div id="instagramVideos" class="instagramMedia">
+            {% for video in videos %}
+            <video width="400" controls class="singleInstagramVideo">
+                <source src="{{video}}" type="video/mp4">
+            </video>
+            {% endfor%}
+        </div>
+        <div id="beerthaFooter" style="text-align: center;">
+            <div id="contactInformation">
+                <h5>Chicago, IL</h5>
+                <h5><a href="mailto:bigbeertha@bigbeertha.com?Subject=Big%20Beertha%20Inquiry" target="_top">BigBeertha@BigBeertha.com</a></h5>
+            </div>
+            <h4>&copy Big Beertha</h4>
+        </div>
+        <div id="ronovoFooter" style="text-align: center;">
+            <h6>&copy A Ronovo LLC Website - All Rights Reserved</h6>
         </div>
     </div>
 </body>
