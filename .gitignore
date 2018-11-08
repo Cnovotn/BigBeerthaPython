@@ -1,5 +1,8 @@
 *.pyc
+<<<<<<< HEAD
 config.py
 __pycache__
 .ipynb_checkpoints
+=======
+>>>>>>> Ronak
 .DS_Store

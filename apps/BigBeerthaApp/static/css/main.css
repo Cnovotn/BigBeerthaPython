@@ -1,17 +1,14 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
-hr {
-    border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    width: 100%;
-    position: relative;
+
+.descriptionContainer {
+  text-align:
 }
 /* Clayton Work */
 #videoContentContainer {
@@ -55,62 +52,142 @@ div[class*="box"] {
   	width: 250px;
   	cursor: pointer;
     z-index: 2;
+
+/* Responsive Menu */
+nav {
+  padding: 8px;
+  position: absolute;
+  left: 10vw;
+  top: 10vh;
+}
+
+a {
+  text-decoration: none !important;
+  text-transform: none !important;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #66bd61;
+}
+
+.logo {
+  float: left;
+  padding: 8px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.logo a {
+  color: #000;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0px;
+  text-decoration: none;
+}
+
+nav ul {
+  float: right;
+}
+
+nav ul li {
+  display: inline-block;
+  float: left;
+}
+
+nav ul li:not(:first-child) {
+  margin-left: 24px;
+}
+
+nav ul li:last-child {
+  margin-right: 24px;
+}
+
+nav ul li a {
+  display: inline-block;
+  outline: none;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  box-sizing:
+}
+
+@media screen and (max-width: 864px) {
+  .logo {
+    padding: 0;
+  }
+
+  .nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  .nav-wrapper ul {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    width: 100%;
   }
-  .btn-one {
-  	color: #fff;
-  	transition: all 0.3s;
+
+  .nav-wrapper ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
   }
-  .btn-one span {
-  	transition: all 0.3s;
-    vertical-align: middle;
-    position: relative;
-    vertical-align: middle;
-    font-size: 36px !important;
-    margin-bottom: 50px;
+
+  .nav-wrapper ul li:nth-child(1) a {
+    transition-delay: 0.2s;
   }
-  .btn-one::before {
-  	content: '';
-  	position: absolute;
-  	bottom: 0;
-  	left: 0;
-  	width: 100%;
-  	height: 100%;
-  	z-index: 1;
-  	opacity: 0;
-  	transition: all 0.3s;
-  	border-top-width: 2px;
-  	border-bottom-width: 2px;
-  	border-top-style: solid;
-  	border-bottom-style: solid;
-  	border-top-color: rgba(255,255,255,0.5);
-  	border-bottom-color: rgba(255,255,255,0.5);
-  	transform: scale(0.1, 1);
+
+  .nav-wrapper ul li:nth-child(2) a {
+    transition-delay: 0.3s;
   }
-  .btn-one:hover span {
-  	letter-spacing: 2px;
+
+  .nav-wrapper ul li:nth-child(3) a {
+    transition-delay: 0.4s;
   }
-  .btn-one:hover::before {
-  	opacity: 1;
-  	transform: scale(1, 1);
+
+  .nav-wrapper ul li:nth-child(4) a {
+    transition-delay: 0.5s;
   }
-  .btn-one::after {
-  	content: '';
-  	position: absolute;
-  	bottom: 0;
-  	left: 0;
-  	width: 100%;
-  	height: 100%;
-  	z-index: 1;
-  	transition: all 0.3s;
-  	background-color: rgba(255,255,255,0);
+
+  .nav-wrapper ul li:not(:first-child) {
+    margin-left: 0;
   }
-  .btn-one:hover::after {
-  	opacity: 0;
-  	transform: scale(0.1, 1);
+
+  .nav-wrapper ul li a {
+    padding: 10px 24px;
+    opacity: 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transform: translateX(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav-btn {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
   }
 }
 /* End Buy Button */

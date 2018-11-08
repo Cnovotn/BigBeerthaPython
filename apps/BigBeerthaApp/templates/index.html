@@ -1,20 +1,23 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Big Beertha</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/underline.css' %}">
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Big Beertha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/underline.css' %}">
+  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
+
 <body>
+<<<<<<< HEAD
     {% include 'header.html' %}
     <div id="mainContainer">
         <div id="videoContentContainer">
@@ -70,9 +73,92 @@
             {% endfor%}
         </div>
         {% include 'footer.html' %}
+=======
+  <!-- {% csrf_token %} -->
+  <div id="mainContainer">
+    <div id="header">
+      <!--
+                Logo in top left corner, as the user scrolls down on the page, the nav bar changes opacity.
+                Home Page
+                Buy Beertha page with shopify integrated
+                About Beertha
+                Social Beertha connected to Big beertha instagram account
+                Contact Beertha
+             -->
     </div>
+    <div class="container">
+      <nav>
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" class="nav-btn">
+          <i></i>
+          <i></i>
+          <i></i>
+        </label>
+        <div class="logo">
+          <img style="width:50%; height:50%;" id="beerLogo"src="https://static.wixstatic.com/media/791fd2_6bac8dde99c242d999e8f9863c0eb5af.png/v1/fill/w_854,h_465,al_c,q_85,usm_0.66_1.00_0.01/791fd2_6bac8dde99c242d999e8f9863c0eb5af.webp" alt="logo.jpg">
+        </div>
+        <div class="nav-wrapper">
+          <ul>
+            <li><a style="border: none;" class="tablinks navUnder nav-link active" onclick="openTab(event, 'home')">HOME</a></li>
+            <li><a style="border: none;" class="tablinks navUnder nav-link" onclick="openTab(event, 'buy')">BUY BEERTHA</a></li>
+            <li><a style="border: none;" class="tablinks navUnder nav-link" onclick="openTab(event, 'social')">SOCIAL</a></li>
+
+          </ul>
+        </div>
+
+      </nav>
+
+
+      <!-- Home Content -->
+      <div id="home" class="tabcontent active">
+        <div id="buyNow">
+          <a style="cursor:pointer;" onclick="openTab(event, 'buy')">BUY NOW</a>
+        </div>
+        <!-- <div class="videoContainer">
+          <img src="http://www.minigolffederationofindia.com/wp-content/uploads/2016/07/Golf-Club-sports-desktop-golf-stock-photo-ball-1920x1080-1024x576.jpg" alt="golf.jpg">
+        </div> -->
+      </div>
+      <!-- Buy Menu -->
+      <div id="buy" class="tabcontent">
+        <h1>Hi</h1>
+      </div>
+      <!-- Social -->
+      <div id="social" class="tabcontent">
+        <h1>Gang</h1>
+      </div>
+
+>>>>>>> Ronak
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script>
+    /* $(document.ready(function){
+      $(.tabcontent).hide();
+      $(#home).show();
+    }); */
+    function openTab(evt, tabName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
 </body>
+
 </html>
