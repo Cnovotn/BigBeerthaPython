@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,28 +7,28 @@
     <title>Big Beertha</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/underline.css' %}">
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
 <style>
 .singleInstagramImage{
     width: 30%;
     margin: 1.5%;
 }
-
 .singleInstagramVideo{
-
 }
-
 .instagramMedia{
     width: 100%;
 }
 </style>
 <body>
     <div id="mainContainer">
-        <h1>Hello Big Bertha</h1>
         <div id="header">
-            <!-- 
+            <!--
                 Logo in top left corner, as the user scrolls down on the page, the nav bar changes opacity.
                 Home Page
                 Buy Beertha page with shopify integrated
@@ -36,11 +37,62 @@
                 Contact Beertha
              -->
         </div>
-        <div id="contentContainer">
-            <div id="homePageInfo" class="infoContainer">
+        <div class="container">
+            <nav>
+                  <input type="checkbox" id="nav" class="hidden">
+                  <label for="nav" class="nav-btn">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                  </label>
+                  <div class="logo">
+                        <a href="#"></a>
+                  </div>
+                  <div class="nav-wrapper">
+                        <ul>
+                              <li><a class="navUnder" href="#">Home</a></li>
+                              <li><a class="navUnder" href="#">Buy Beertha</a></li>
+                              <li><a class="navUnder" href="#">Social</a></li>
 
+                        </ul>
+                  </div>
+            </nav>
+      </div>
+
+
+        <div id="videoContentContainer">
+          <video style="object-fit: fill;" width="100%" height="620" muted autoplay loop>
+            <source src="{% static 'img/back.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- <div class="box-1">
+          <div class="btn btn-one">
+            <span id="buyButton">Buy Now</span>
+          </div>
+        </div> -->
+        <div class="aboutContainer">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="descriptionContainer">
+                  <p>Have you ever shotgunned a cold beverage on the golf course?  If you're a golfer, the answer is yes.  Have you ever beerbonged on the course?  Chances are, you haven't.  Beerbongs have long been considered a serious faux pas on the golf course...until now.</p>
+                </div>
+              </div>
+              <div class="col"></div>
             </div>
-            <div id="aboutContainer" class="infoContainer">
+            <div class="row">
+              <div class="col">
+                <img src="{% static 'img/multipleB.jpg' %}" alt="beerbong">
+              </div>
+              <div class="col">
+                <div class="descriptionContainer">
+                  <p>Have you ever shotgunned a cold beverage on the golf course?  If you're a golfer, the answer is yes.  Have you ever beerbonged on the course?  Chances are, you haven't.  Beerbongs have long been considered a serious faux pas on the golf course...until now.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div id="beerthaFooter">
 
             </div>
             <div id="contactContainer" class="infoContainer">
@@ -71,5 +123,8 @@
             <h6>&copy A Ronovo LLC Website - All Rights Reserved</h6>
         </div>
     </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
