@@ -27,6 +27,14 @@ def index(request):
 
     return render(request, "index.html")
 
+def buyBeertha(request):
+    return render(request, "buyBeertha.html")
+
+def socialPage(request):
+    return render(request, "social.html")
+
+def contactPage(request):
+    return render(request, "contact.html")
 # # Replace the following with your shop URL
 # shop_url = "https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin"
 # shopify.ShopifyResource.set_site(shop_url)

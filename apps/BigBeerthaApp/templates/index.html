@@ -14,52 +14,9 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
-<style>
-.singleInstagramImage{
-    width: 30%;
-    margin: 1.5%;
-}
-.singleInstagramVideo{
-}
-.instagramMedia{
-    width: 100%;
-}
-</style>
 <body>
+    {% include 'header.html' %}
     <div id="mainContainer">
-        <div id="header">
-            <!--
-                Logo in top left corner, as the user scrolls down on the page, the nav bar changes opacity.
-                Home Page
-                Buy Beertha page with shopify integrated
-                About Beertha
-                Social Beertha connected to Big beertha instagram account
-                Contact Beertha
-             -->
-        </div>
-        <div class="container">
-            <nav>
-                  <input type="checkbox" id="nav" class="hidden">
-                  <label for="nav" class="nav-btn">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                  </label>
-                  <div class="logo">
-                        <a href="#"></a>
-                  </div>
-                  <div class="nav-wrapper">
-                        <ul>
-                              <li><a class="navUnder" href="#">Home</a></li>
-                              <li><a class="navUnder" href="#">Buy Beertha</a></li>
-                              <li><a class="navUnder" href="#">Social</a></li>
-
-                        </ul>
-                  </div>
-            </nav>
-      </div>
-
-
         <div id="videoContentContainer">
           <video style="object-fit: fill;" width="100%" height="620" muted autoplay loop>
             <source src="{% static 'img/back.mp4' %}" type="video/mp4">
@@ -112,16 +69,7 @@
             </video>
             {% endfor%}
         </div>
-        <div id="beerthaFooter" style="text-align: center;">
-            <div id="contactInformation">
-                <h5>Chicago, IL</h5>
-                <h5><a href="mailto:bigbeertha@bigbeertha.com?Subject=Big%20Beertha%20Inquiry" target="_top">BigBeertha@BigBeertha.com</a></h5>
-            </div>
-            <h4>&copy Big Beertha</h4>
-        </div>
-        <div id="ronovoFooter" style="text-align: center;">
-            <h6>&copy A Ronovo LLC Website - All Rights Reserved</h6>
-        </div>
+        {% include 'footer.html' %}
     </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
