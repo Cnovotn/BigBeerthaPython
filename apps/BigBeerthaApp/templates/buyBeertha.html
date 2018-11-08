@@ -10,8 +10,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/underline.css' %}">
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/buyBeertha.css' %}">
 </head>
 <style>
 </style>
@@ -19,7 +19,36 @@
     <div id="mainContainer">
         {% include 'header.html' %}
         <div id="bodyContainer">
+            <div id="purchasingInformation">
 
+            </div>
+            <div id="allBeerthasForSale">
+                <div class="singleProductForSale" id="singleBeertha">
+                    <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
+                    <h4><b>The Big Beertha</b></h4>
+                    <h5>$44.00</h5>
+                </div>
+                <div class="singleProductForSale" id="beerthaHeadCover">
+                    <img src="{% static 'img/BeerthaCover.jpeg' %}">
+                    <h4><b>The Big Beertha Headcover</b></h4>
+                    <h5>$7.00</h5>
+                </div>
+                <div class="singleProductForSale" id="bigBeerthaPlus">
+                    <img src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}">
+                    <h4><b>The Big Beertha Plus</b></h4>
+                    <h5>$49.00</h5>
+                </div>
+                <div class="singleProductForSale" id="beerthaParThree">
+                    <img src="{% static 'img/Par3_550x825.jpeg' %}">
+                    <h4><b>The Big Beertha - Par 3</b></h4>
+                    <h5>$99.00</h5>
+                </div>
+                <div class="singleProductForSale" id="beerthaFullSet">
+                    <img src="{% static 'img/multipleB.jpg' %}">
+                    <h4><b>The Full Set</b></h4>
+                    <h5>$399.00</h5>
+                </div>
+            </div>
         </div>
         {% include 'footer.html' %}
     </div>
