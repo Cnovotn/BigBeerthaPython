@@ -1,25 +1,30 @@
-<div id="beerthaFooter" style="text-align: center;">
-    <div id="contactInformation">
-        <h5>Chicago, IL</h5>
-        <h5><a href="mailto:bigbeertha@bigbeertha.com?Subject=Big%20Beertha%20Inquiry" target="_top">BigBeertha@BigBeertha.com</a></h5>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="beerthaFooter">
+    <div class="footerSection" id="emailContactForm">
+        <h4>Stay Connected</h4>
+        <p>Keep up to date with all of the news about the best and beer bong driver on the market</p>
+        <form action="emailSubscriber" method="POST">
+            {% csrf_token %}
+            <input type="email" name="subscriberEmail">
+            <input type="submit" class="submitButton">
+        </form>
     </div>
-    <div class="stayConnected">
-        <div id="emailContactForm">
-            <h4>Stay Connected</h4>
-            <p>Keep up to date with all of the news about the best and beer bong driver on the market</p>
-            <form action="emailSubscriber" method="POST">
-                {% csrf_token %}
-                <input type="email" name="subscriberEmail">
-            </form>
-        </div>
+    <div class="footerSection" id="centerOfFooter">
         <div id="socialMediaButtons">
-            <a href="https://www.facebook.com/bigbeertha/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/bigbeertha/" target="_blank">Instagram</a>
-            <a href="https://twitter.com/bigbeertha" target="_blank">Twitter</a>
+            <!-- Make these buttons take up  -->
+            <a href="https://www.facebook.com/bigbeertha/" target="_blank" class="fa fa-facebook socialButton"></a>
+            <a href="https://www.instagram.com/bigbeertha/" target="_blank" class="fa fa-instagram socialButton"></a>
+            <a href="https://twitter.com/bigbeertha" target="_blank" class="fa fa-twitter socialButton"></a>
         </div>
     </div>
-    <h4>&copy Big Beertha</h4>
+    <div class="footerSection" id="rightSideFooter">
+        <div id="buyOnAmazon">
+            <h6>Big Beerthas are also available for purchase on <a href="https://www.amazon.com/Double-Hose-Beer-Bong-Valves/dp/B072BMPM86/ref=sr_1_1_sspa?s=home-garden&ie=UTF8&qid=1541656235&sr=1-1-spons&keywords=beer+bong&psc=1" target="_blank">Amazon</a></h6>
+            <a href="https://www.amazon.com/Double-Hose-Beer-Bong-Valves/dp/B072BMPM86/ref=sr_1_1_sspa?s=home-garden&ie=UTF8&qid=1541656235&sr=1-1-spons&keywords=beer+bong&psc=1" target="_blank">Buy on Amazon</a>
+        </div>
+    </div>
 </div>
-<div id="ronovoFooter" style="text-align: center;">
-    <h6>&copy A Ronovo LLC Website - All Rights Reserved</h6>
+<div id="bottomOfFooter" style="text-align: center;">
+    <p>&copy 2018 by Big Beertha. All Rights Reserved.</p>
+    <p>Created by <a href="https://www.ronovo.io" target="_blank">Ronovo</a> inc</p>
 </div>

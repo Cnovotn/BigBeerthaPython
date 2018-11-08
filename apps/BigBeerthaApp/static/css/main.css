@@ -13,12 +13,33 @@ hr {
     width: 100%;
     position: relative;
 }
+/* Clayton Work */
 #videoContentContainer {
-  margin-top: 15vh;
-  position: relative;
-  z-index: -5;
-
+      margin-top: 15vh;
+      position: relative;
+      z-index: -5;
 }
+.headerContainer{
+      width: 100%;
+      position: fixed;
+      top: 0px;
+      height: 100px;
+      z-index: 2;
+}
+#mainContainer{
+      margin-top: 100px;
+}
+#beerthaFooter{
+      width: 100%;
+      background-color: blueviolet;
+      display: flex;
+}
+.footerSection{
+      width: 33%;
+      margin: 3%;
+}
+/* Ronak Work */
+
 div[class*="box"] {
   height: 33.33%;
   width: 100%;
