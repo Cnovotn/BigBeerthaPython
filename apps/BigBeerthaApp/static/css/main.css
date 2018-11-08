@@ -127,7 +127,6 @@ div[class*="box"] {
 
     nav ul li {
           display: inline-block;
-          float: left;
     }
 
     nav ul li:not(:first-child) {
@@ -146,7 +145,6 @@ div[class*="box"] {
           font-size: 14px;
           letter-spacing: 1.2px;
           font-weight: 600;
-          box-sizing:
     }
 
     @media screen and (max-width: 864px) {
