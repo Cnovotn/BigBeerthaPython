@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Big Beertha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/underline.css' %}">
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/buyBeertha.css' %}">
+</head>
+<style>
+</style>
+<body>
+    <div id="mainContainer">
+        {% include 'header.html' %}
+        <div id="bodyContainer">
+            <div id="purchasingInformation">
+
+            </div>
+            <div id="allBeerthasForSale">
+                <div class="singleProductForSale" id="singleBeertha">
+                    <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
+                    <h4><b>The Big Beertha</b></h4>
+                    <h5>$44.00</h5>
+                </div>
+                <div class="singleProductForSale" id="beerthaHeadCover">
+                    <img src="{% static 'img/BeerthaCover.jpeg' %}">
+                    <h4><b>The Big Beertha Headcover</b></h4>
+                    <h5>$7.00</h5>
+                </div>
+                <div class="singleProductForSale" id="bigBeerthaPlus">
+                    <img src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}">
+                    <h4><b>The Big Beertha Plus</b></h4>
+                    <h5>$49.00</h5>
+                </div>
+                <div class="singleProductForSale" id="beerthaParThree">
+                    <img src="{% static 'img/Par3_550x825.jpeg' %}">
+                    <h4><b>The Big Beertha - Par 3</b></h4>
+                    <h5>$99.00</h5>
+                </div>
+                <div class="singleProductForSale" id="beerthaFullSet">
+                    <img src="{% static 'img/multipleB.jpg' %}">
+                    <h4><b>The Full Set</b></h4>
+                    <h5>$399.00</h5>
+                </div>
+            </div>
+        </div>
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>

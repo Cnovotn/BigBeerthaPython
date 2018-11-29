@@ -1,0 +1,159 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  #beerthaFooter{
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-color: #66cc66;
+  display: flex;
+}
+.footerSection{
+      width: 33%;
+      margin: 3%;
+}
+.socialButton{
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: #f1f1f1;
+  margin: 10px;
+  border-radius: 30%;
+  /* box-shadow: 0px 5px 15px -5px #00000070; */
+  overflow: hidden;
+  position: relative;
+}
+.socialButton i{
+  line-height: 70px;
+  font-size: 28px;
+  transition: .2s linear;
+}
+.socialButton:hover i{
+  transform: scale(1.3);
+  color: #f1f1f1;
+  z-index: 5;
+}
+.facebook::before{
+  content: "";
+  position: absolute;
+  background: #3b5998;
+  height: 120%;
+  width: 120%;
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+.instagram::before{
+  content: "";
+  position: absolute;
+  background: #f56040;
+  height: 120%;
+  width: 120%;
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+.twitter::before{
+  content: "";
+  position: absolute;
+  background: #1da1f2;
+  height: 120%;
+  width: 120%;
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+.fa-facebook{
+  color: #3b5998;
+}
+.fa-instagram{
+  color: #f56040;
+}
+.fa-twitter{
+  color: #1da1f2;
+}
+.socialButton:hover::before{
+  animation: aaa 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+@keyframes aaa {
+  0%{
+    top: -110%;
+    left: 90%;
+  }50%{
+    top: 10%;
+    left: -30%;
+  }100%{
+    top: -10%;
+    left: -10%;
+  }
+
+}
+#emailForm{
+  margin: 10px;
+}
+.emailInput{
+  padding: 10px;
+  width: 200px;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+.submitButton{
+  border: none;
+  height: 40px;
+  width: 60px;
+  margin-left: 5px;
+  padding: 10px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+.submitButton:hover{
+  background-color: #77dd77;
+}
+#buyOnAmazon{
+
+}
+.amazonBuyButton{
+  border-color: white;
+}
+.footerSection {
+
+}
+</style>
+<div id="beerthaFooter">
+  <div class="footerSection" id="emailContactForm">
+    <h4>Stay Connected</h4>
+    <p>Keep up to date with all of the news about the best, and only, beer bong driver on the market</p>
+    <form style="display: inline-block;"id="emailForm" action="emailSubscriber" method="POST">
+      {% csrf_token %}
+      <input class="emailInput" type="email" name="subscriberEmail">
+      <input class="submitButton" type="submit" class="submitButton">
+    </form>
+  </div>
+  <div class="footerSection" id="centerOfFooter">
+    <div id="socialMediaButtons">
+      <!-- Make these buttons take up  -->
+      <a href="https://www.facebook.com/bigbeertha/" target="_blank" class="socialButton facebook"><i class="fa fa-facebook"></i></a>
+      <a id="instagram" href="https://www.instagram.com/bigbeertha/" target="_blank" class="socialButton instagram"><i class="fa fa-instagram"></i></a>
+      <a id="twitter" href="https://twitter.com/bigbeertha" target="_blank" class="socialButton twitter"><i class="fa fa-twitter"></i></a>
+    </div>
+  </div>
+  <div class="footerSection" id="rightSideFooter">
+    <div id="buyOnAmazon">
+      <h6 class="">Big Beerthas are also available for purchase on <a href="https://www.amazon.com/Double-Hose-Beer-Bong-Valves/dp/B072BMPM86/ref=sr_1_1_sspa?s=home-garden&ie=UTF8&qid=1541656235&sr=1-1-spons&keywords=beer+bong&psc=1" target="_blank">Amazon</a></h6>
+      <a class="amazonBuy" href="https://www.amazon.com/Double-Hose-Beer-Bong-Valves/dp/B072BMPM86/ref=sr_1_1_sspa?s=home-garden&ie=UTF8&qid=1541656235&sr=1-1-spons&keywords=beer+bong&psc=1" target="_blank">Buy on Amazon</a>
+    </div>
+  </div>
+</div>
+<div id="bottomOfFooter" style="text-align: center;">
+  <p>&copy 2018 by Big Beertha. All Rights Reserved.</p>
+  <p>Created by <a href="https://www.ronovo.io" target="_blank">Ronovo</a> inc</p>
+</div>
