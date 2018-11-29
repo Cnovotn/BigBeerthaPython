@@ -8,14 +8,10 @@ body {
 }
 
 .descriptionContainer {
-  text-align:
+  text-align: left;
+  width: 150px;
 }
 /* Clayton Work */
-#videoContentContainer {
-      margin-top: 15vh;
-      position: relative;
-      z-index: -5;
-}
 .headerContainer{
       width: 100%;
       position: fixed;
@@ -24,16 +20,37 @@ body {
       z-index: 2;
 }
 #mainContainer{
-      margin-top: 100px;
-}
-#beerthaFooter{
+      margin-top: 20vh;
+      margin-bottom: 5vh;
       width: 100%;
-      background-color: blueviolet;
-      display: flex;
+
 }
-.footerSection{
-      width: 33%;
-      margin: 3%;
+.vidPlaceholder{
+  height: 50vh;
+  width: 100vw;
+  background-color: #eee;
+}
+.card {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    margin: 30px;
+    margin-left: 60px;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.card:hover {
+    box-shadow: 0 6px 18px 0 rgba(0,0,0,0.2);
+}
+
+.card .container {
+    text-align: center;
+}
+.card .container p{
+    margin-top: 30px;
+    line-height: 1.5em;
+    font-size: 18px;
 }
 
 /* Ronak Work */
@@ -55,339 +72,141 @@ div[class*="box"] {
     z-index: 2;
 
 /* Responsive Menu */
-nav {
-  padding: 8px;
-  position: absolute;
-  left: 10vw;
-  top: 10vh;
-}
-
-a {
-  text-decoration: none !important;
-  text-transform: none !important;
-  cursor: pointer;
-}
-
-a:hover {
-  color: #66bd61;
-}
-
-.logo {
-  float: left;
-  padding: 8px;
-  position: absolute;
-  left: 5px;
-  top: 5px;
-}
-
-.logo a {
-  color: #000;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0px;
-  text-decoration: none;
-}
-
-nav ul {
-  float: right;
-}
-
-nav ul li {
-  display: inline-block;
-  float: left;
-}
-
-nav ul li:not(:first-child) {
-  margin-left: 24px;
-}
-
-nav ul li:last-child {
-  margin-right: 24px;
-}
-
-nav ul li a {
-  display: inline-block;
-  outline: none;
-  color: #000;
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 1.2px;
-  font-weight: 600;
-  box-sizing:
-}
-
-@media screen and (max-width: 864px) {
-  .logo {
-    padding: 0;
-  }
-
-  .nav-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: rgba(255, 255, 255, 0.9);
-    opacity: 0;
-    transition: all 0.2s ease;
-  }
-
-  .nav-wrapper ul {
+  nav {
+    padding: 8px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
+    left: 10vw;
+    top: 10vh;
   }
 
-  .nav-wrapper ul li {
-    display: block;
-    float: none;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 10px;
-  }
-
-  .nav-wrapper ul li:nth-child(1) a {
-    transition-delay: 0.2s;
-  }
-
-  .nav-wrapper ul li:nth-child(2) a {
-    transition-delay: 0.3s;
-  }
-
-  .nav-wrapper ul li:nth-child(3) a {
-    transition-delay: 0.4s;
-  }
-
-  .nav-wrapper ul li:nth-child(4) a {
-    transition-delay: 0.5s;
-  }
-
-  .nav-wrapper ul li:not(:first-child) {
-    margin-left: 0;
-  }
-
-  .nav-wrapper ul li a {
-    padding: 10px 24px;
-    opacity: 0;
-    color: #000;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    transform: translateX(-20px);
-    transition: all 0.2s ease;
-  }
-
-  .nav-btn {
-    position: fixed;
-    right: 10px;
-    top: 10px;
-    display: block;
-    width: 48px;
-    height: 48px;
+  a {
+    text-decoration: none !important;
+    text-transform: none !important;
     cursor: pointer;
-    z-index: 9999;
-    border-radius: 50%;
   }
-}
-/* End Buy Button */
 
-  /* Responsive Menu */
-    nav {
-          padding: 8px;
-    }
-    a {
-      text-decoration: none !important;
-      text-transform: none !important;
-    }
-    a:hover{
-      color: #070;
-    }
+  a:hover {
+    color: #66bd61;
+  }
 
+  .logo {
+    float: left;
+    padding: 8px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+  }
+
+  .logo a {
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0px;
+    text-decoration: none;
+  }
+
+  nav ul {
+    float: right;
+  }
+
+  nav ul li {
+    display: inline-block;
+    float: left;
+  }
+
+  nav ul li:not(:first-child) {
+    margin-left: 24px;
+  }
+
+  nav ul li:last-child {
+    margin-right: 24px;
+  }
+
+  nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    box-sizing:
+  }
+
+  @media screen and (max-width: 864px) {
     .logo {
-          float: left;
-          padding: 8px;
-          margin-left: 16px;
-          margin-top: 8px;
+      padding: 0;
     }
 
-    .logo a {
-          color: #000;
-          font-weight: 700;
-          font-size: 18px;
-          letter-spacing: 0px;
-          text-decoration: none;
+    .nav-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: rgba(255, 255, 255, 0.9);
+      opacity: 0;
+      transition: all 0.2s ease;
     }
 
-    nav ul {
-          float: right;
+    .nav-wrapper ul {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
     }
 
-    nav ul li {
-          display: inline-block;
+    .nav-wrapper ul li {
+      display: block;
+      float: none;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 10px;
     }
 
-    nav ul li:not(:first-child) {
-          margin-left: 24px;
+    .nav-wrapper ul li:nth-child(1) a {
+      transition-delay: 0.2s;
     }
 
-    nav ul li:last-child {
-          margin-right: 24px;
+    .nav-wrapper ul li:nth-child(2) a {
+      transition-delay: 0.3s;
     }
 
-    nav ul li a {
-          display: inline-block;
-          outline: none;
-          color: #000;
-          text-decoration: none;
-          font-size: 14px;
-          letter-spacing: 1.2px;
-          font-weight: 600;
+    .nav-wrapper ul li:nth-child(3) a {
+      transition-delay: 0.4s;
     }
 
-    @media screen and (max-width: 864px) {
-          .logo {
-                padding: 0;
-          }
-
-          .nav-wrapper {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                background: rgba(255,255,255,0.9);
-                opacity: 0;
-                transition: all 0.2s ease;
-          }
-
-          .nav-wrapper ul {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 100%;
-          }
-
-          .nav-wrapper ul li {
-                display: block;
-                float: none;
-                width: 100%;
-                text-align: left;
-                margin-bottom: 10px;
-          }
-
-          .nav-wrapper ul li:nth-child(1) a {
-                transition-delay: 0.2s;
-          }
-
-          .nav-wrapper ul li:nth-child(2) a {
-                transition-delay: 0.3s;
-          }
-
-          .nav-wrapper ul li:nth-child(3) a {
-                transition-delay: 0.4s;
-          }
-
-          .nav-wrapper ul li:nth-child(4) a {
-                transition-delay: 0.5s;
-          }
-
-          .nav-wrapper ul li:not(:first-child) {
-                margin-left: 0;
-          }
-
-          .nav-wrapper ul li a {
-                padding: 10px 24px;
-                opacity: 0;
-                color: #000;
-                font-size: 14px;
-                font-weight: 600;
-                letter-spacing: 1.2px;
-                transform: translateX(-20px);
-                transition: all 0.2s ease;
-          }
-
-          .nav-btn {
-                position: fixed;
-                right: 10px;
-                top: 10px;
-                display: block;
-                width: 48px;
-                height: 48px;
-                cursor: pointer;
-                z-index: 9999;
-                border-radius: 50%;
-          }
-
-          .nav-btn i {
-                display: block;
-                width: 20px;
-                height: 2px;
-                background: #000;
-                border-radius: 2px;
-                margin-left: 14px;
-          }
-
-          .nav-btn i:nth-child(1) {
-                margin-top: 16px;
-          }
-
-          .nav-btn i:nth-child(2) {
-                margin-top: 4px;
-                opacity: 1;
-          }
-
-          .nav-btn i:nth-child(3) {
-                margin-top: 4px;
-          }
-          .descriptionContainer {
-            font-size: 16px;
-            text-align: justify;
-          }
+    .nav-wrapper ul li:nth-child(4) a {
+      transition-delay: 0.5s;
     }
 
-    #nav:checked + .nav-btn {
-          transform: rotate(45deg);
+    .nav-wrapper ul li:not(:first-child) {
+      margin-left: 0;
     }
 
-    #nav:checked + .nav-btn i {
-          background: #000;
-          transition: transform 0.2s ease;
+    .nav-wrapper ul li a {
+      padding: 10px 24px;
+      opacity: 0;
+      color: #000;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      transform: translateX(-20px);
+      transition: all 0.2s ease;
     }
 
-    #nav:checked + .nav-btn i:nth-child(1) {
-          transform: translateY(6px) rotate(180deg);
+    .nav-btn {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      display: block;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      z-index: 9999;
+      border-radius: 50%;
     }
-
-    #nav:checked + .nav-btn i:nth-child(2) {
-          opacity: 0;
-    }
-
-    #nav:checked + .nav-btn i:nth-child(3) {
-          transform: translateY(-6px) rotate(90deg);
-    }
-
-    #nav:checked ~ .nav-wrapper {
-          z-index: 9990;
-          opacity: 1;
-    }
-
-    #nav:checked ~ .nav-wrapper ul li a {
-          opacity: 1;
-          transform: translateX(0);
-    }
-
-    .hidden {
-          display: none;
-    }
-  /* End Responsive Menu */
-
-  .descriptionContainer {
-    font-size: 24px;
-    text-align: justify;
   }
-  .aboutContainer{
-    margin-top: 20px;
-  }
+/* End Responsive */
+/* End Buy Button */
