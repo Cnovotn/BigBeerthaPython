@@ -1,9 +1,21 @@
 /* Clayton Work */
 .singleProductForSale{
-    width: 30%;
+    width: 32%;
+    margin: 1%;
 }
 #allBeerthasForSale{
     width: 100%;
-    display: inline-block;
 }
+img{
+    width: 99%;
+}
+img:hover{
+    opacity: .75;
+    transition: 0.3s;
+}
+.oneRow{
+    width: 100%;
+    display: flex;
+}
+
 /* Ronak Work */

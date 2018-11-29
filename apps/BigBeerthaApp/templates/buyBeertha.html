@@ -20,33 +20,65 @@
         {% include 'header.html' %}
         <div id="bodyContainer">
             <div id="purchasingInformation">
-
+                <h2>Let's make golfing fun again!</h2>
             </div>
             <div id="allBeerthasForSale">
-                <div class="singleProductForSale" id="singleBeertha">
-                    <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
-                    <h4><b>The Big Beertha</b></h4>
-                    <h5>$44.00</h5>
+                <div class="allInformation" id="singleBeerthaInfo" style="display: none">
+                    
                 </div>
-                <div class="singleProductForSale" id="beerthaHeadCover">
-                    <img src="{% static 'img/BeerthaCover.jpeg' %}">
-                    <h4><b>The Big Beertha Headcover</b></h4>
-                    <h5>$7.00</h5>
+                <div class="oneRow">
+                    <div class="singleProductForSale" id="singleBeertha">
+                        <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
+                        <h4><b>The Big Beertha</b></h4>
+                        <h5>$44.00</h5>
+                        <form action="addToCart" method="POST">
+                            {% csrf_token %}
+                            <input name="order" value="singleBeertha" type="hidden">
+                            <input type="submit" value="Add To Cart">
+                        </form>
+                    </div>
+                    <div class="singleProductForSale" id="beerthaHeadCover">
+                        <img src="{% static 'img/BeerthaCover.jpeg' %}">
+                        <h4><b>The Big Beertha Headcover</b></h4>
+                        <h5>$7.00</h5>
+                        <form action="addToCart" method="POST">
+                            {% csrf_token %}    
+                            <input name="order" value="beerthaHeadCover" type="hidden">
+                            <input type="submit" value="Add To Cart">
+                        </form>
+                    </div>
+                    <div class="singleProductForSale" id="bigBeerthaPlus">
+                        <img src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}">
+                        <h4><b>The Big Beertha Plus</b></h4>
+                        <h5>$49.00</h5>
+                        <form action="addToCart" method="POST">
+                            {% csrf_token %}
+                            <input name="order" value="bigBeerthaPlus" type="hidden">
+                            <input type="submit" value="Add To Cart">
+                        </form>
+                    </div>
                 </div>
-                <div class="singleProductForSale" id="bigBeerthaPlus">
-                    <img src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}">
-                    <h4><b>The Big Beertha Plus</b></h4>
-                    <h5>$49.00</h5>
-                </div>
-                <div class="singleProductForSale" id="beerthaParThree">
-                    <img src="{% static 'img/Par3_550x825.jpeg' %}">
-                    <h4><b>The Big Beertha - Par 3</b></h4>
-                    <h5>$99.00</h5>
-                </div>
-                <div class="singleProductForSale" id="beerthaFullSet">
-                    <img src="{% static 'img/multipleB.jpg' %}">
-                    <h4><b>The Full Set</b></h4>
-                    <h5>$399.00</h5>
+                <div class="oneRow">
+                    <div class="singleProductForSale" id="beerthaParThree">
+                        <img src="{% static 'img/Par3_550x825.jpeg' %}">
+                        <h4><b>The Big Beertha - Par 3</b></h4>
+                        <h5>$99.00</h5>
+                        <form action="addToCart" method="POST">
+                            {% csrf_token %}
+                            <input name="order" value="beerthaParThree" type="hidden">
+                            <input type="submit" value="Add To Cart">
+                        </form>
+                    </div>
+                    <div class="singleProductForSale" id="beerthaFullSet">
+                        <img src="{% static 'img/multipleB.jpg' %}">
+                        <h4><b>The Full Set</b></h4>
+                        <h5>$399.00</h5>
+                        <form action="addToCart" method="POST">
+                            {% csrf_token %}    
+                            <input name="order" value="beerthaFullSet" type="hidden">
+                            <input type="submit" value="Add To Cart">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

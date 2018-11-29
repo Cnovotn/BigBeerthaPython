@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from instagram.client import InstagramAPI
 from jinja2 import Template
 import requests, json
@@ -35,6 +35,17 @@ def socialPage(request):
 
 def contactPage(request):
     return render(request, "contact.html")
+
+def addToCart(request):
+    if request.method == "POST":
+        print request.POST["order"]
+    return render(request, "buyBeertha.html")
+
+def viewCart(request):
+    return render(request, "viewCart.html")
+
+def checkout(request):
+    return HttpResponse("Redirecting to shopify checkout page")
 # # Replace the following with your shop URL
 # shop_url = "https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin"
 # shopify.ShopifyResource.set_site(shop_url)
