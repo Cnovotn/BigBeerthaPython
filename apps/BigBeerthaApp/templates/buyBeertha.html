@@ -17,6 +17,18 @@
 </style>
 <body>
     <div id="hiddenInformation">
+        <div class="allInformation" id="addedToCartMessage" style="display:none">
+            <div class="closeTabButton">
+                <button onclick="closeTab('addedToCartMessage')" class="submitButton">Close</button>
+            </div>
+            <div style="text-align:center" >
+                <h1>Your Current Cart</h1>
+            </div>
+            <form action="/checkout" method="POST">
+                {% csrf_token %}    
+                <input type="submit" value="Checkout" class="submitButton" id="checkoutButton">
+            </form>
+        </div>
         <div class="allInformation" id="singleBeerthaInformation" style="display: none">
             <div class="closeTabButton">
                 <button onclick="closeTab('singleBeerthaInformation')" class="submitButton">Close</button>
@@ -50,63 +62,91 @@
         </div>
         <div class="allInformation" id="beerthaHeadCoverInformation" style="display: none">
             <div class="closeTabButton">
-                <button onclick="closeTab('beerthaHeadCoverInformation')"> Close </button>
+                <button onclick="closeTab('beerthaHeadCoverInformation')" class="submitButton">Close</button>
             </div>
-            <h1>Name Of Product</h1>
-            <div class="leftSideInfoPage">
-                <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
-            </div>
-            <div class="rightSideInfoPage">
-                <h3>$7.00</h3>
-                <p>
-                    Content about this product
-                </p>
+            <div style="display:flex;">
+                <div class="leftSideInfoPage">
+                    <img src="{% static 'img/BeerthaCover.jpeg' %}" class="fullPageImage ">
+                </div>
+                <div class="rightSideInfoPage">
+                    <h1>Beertha Head Cover</h1>
+                    <h3>$7.00</h3>
+                    <p>
+                        One of our oversized club head covers, customized with The Big Beertha logo. Protect your Beertha at all costs!
+                    </p>
+                    <form action="addToCart" method="POST">
+                        {% csrf_token %}
+                        <input name="order" value="beerthaHeadCover" type="hidden">
+                        <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="allInformation" id="beerthaPlusInformation" style="display: none">
             <div class="closeTabButton">
-                <button onclick="closeTab('beerthaPlusInformation')"> Close </button>
+                <button onclick="closeTab('beerthaPlusInformation')" class="submitButton">Close</button>
             </div>
-            <h1>Name Of Product</h1>
-            <div class="leftSideInfoPage">
-                <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
-            </div>
-            <div class="rightSideInfoPage">
-                <h3>$49.00</h3>
-                <p>
-                    Content about this product
-                </p>
+            <div style="display:flex;">
+                <div class="leftSideInfoPage">
+                    <img src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}" class="fullPageImage">
+                </div>
+                <div class="rightSideInfoPage">
+                    <h1>The Big Beertha Plus</h1>
+                    <h3>$49.00</h3>
+                    <p>
+                            Get your Big Beertha out on the course incognito, only unveiling it to your foursome when they least expect it. One brand new Big Beertha, fresh from the press, along with one of our custom club head covers. 
+                    </p>
+                    <form action="addToCart" method="POST">
+                        {% csrf_token %}
+                        <input name="order" value="singleBeertha" type="hidden">
+                        <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="allInformation" id="beerthaParThreeInformation" style="display: none">
             <div class="closeTabButton">
-                <button onclick="closeTab('beerthaParThreeInformation')"> Close </button>
+                <button onclick="closeTab('beerthaParThreeInformation')" class="submitButton">Close</button>
             </div>
-            <h1>Name Of Product</h1>
-            <div class="leftSideInfoPage">
-                <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
-            </div>
-            <div class="rightSideInfoPage">
-                <h3>$49.00</h3>
-                <p>
-                    Content about this product
-                </p>
+            <div style="display:flex;">
+                <div class="leftSideInfoPage">
+                    <img src="{% static 'img/Par3_550x825.jpeg' %}" class="fullPageImage">
+                </div>
+                <div class="rightSideInfoPage">
+                    <h1>Par Three</h1>
+                    <h3>$117.00</h3>
+                    <p>
+                        Want more than one Big Beertha? Get 3 Beerthas with the Par 3 box and save money. You cannot beat this deal!
+                    </p>
+                    <form action="addToCart" method="POST">
+                        {% csrf_token %}
+                        <input name="order" value="beerthaParThree" type="hidden">
+                        <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="allInformation" id="beerthaFullSetInformation" style="display: none">
-            <div class="closeTabButton">
-                <button onclick="closeTab('beerthaFullSetInformation')"> Close </button>
-            </div>
-            <h1>Name Of Product</h1>
-            <div class="leftSideInfoPage">
-                <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
-            </div>
-            <div class="rightSideInfoPage">
-                <h3>$49.00</h3>
-                <p>
-                    Content about this product
-                </p>
-            </div>
+                <div class="closeTabButton">
+                    <button onclick="closeTab('beerthaFullSetInformation')" class="submitButton">Close</button>
+                </div>
+                <div style="display:flex;">
+                    <div class="leftSideInfoPage">
+                        <img src="{% static 'img/multipleB.jpg' %}" class="fullPageImage">
+                    </div>
+                    <div class="rightSideInfoPage">
+                        <h1>Full Set</h1>
+                        <h3>$399.00</h3>
+                        <p>
+                            Need a lot of Big Beerthas for an event or tourney? Or maybe you live in a frat house. Maybe you just enjoy the satisfaction one feels when extending a fresh new Beertha to good friends, thereby enriching their lives. The Full Set includes 12 Big Beerthas delivered right to your door. 
+                        </p>
+                        <form action="addToCart" method="POST">
+                            {% csrf_token %}
+                            <input name="order" value="beerthaFullSet" type="hidden">
+                            <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
+                        </form>
+                    </div>
+                </div>
         </div>
     </div>
     <div id="mainContainer">
@@ -115,38 +155,45 @@
                 <h2 style="text-align:center;"></h2>
             </div>
             <div id="allBeerthasForSale">
-                <h1 style="text-align:center;">Buy the Beertha</h1>
                 <div class="oneRow">
                     <div class="singleProductForSale" id="singleBeertha">
                         <img class="regularImage" src="{% static 'img/FullSizeRender_550x825.jpg' %}" onclick="displayBeertha('singleBeerthaInformation')">
                         <h4><b>The Big Beertha</b></h4>
                         <h5>$44.00</h5>
-                        <button value="Add To Cart" class="submitButton" style="width:100%;" onclick="addToCart('singleBeertha')">Add To Cart</button>
-                        <!-- <form action="addToCart" method="POST">
-                            {% csrf_token %}
-                            <input name="order" value="singleBeertha" type="hidden">
-                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                        </form> -->
+                        <div class="twoButtons" style="display: flex">
+                            <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('singleBeerthaInformation')">View Product</button>
+                            <form action="addToCart" method="POST" style="width:100%;">
+                                {% csrf_token %}
+                                <input name="order" value="singleBeertha" type="hidden">
+                                <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
+                            </form>
+                        </div>
                     </div>
                     <div class="singleProductForSale" id="beerthaHeadCover">
                         <img class="regularImage" src="{% static 'img/BeerthaCover.jpeg' %}" onclick="displayBeertha('beerthaHeadCoverInformation')">
                         <h4><b>The Big Beertha Headcover</b></h4>
                         <h5>$7.00</h5>
-                        <form action="addToCart" method="POST">
-                            {% csrf_token %}    
-                            <input name="order" value="beerthaHeadCover" type="hidden">
-                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                        </form>
+                        <div class="twoButtons" style="display: flex">
+                            <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('beerthaHeadCoverInformation')">View Product</button>
+                            <form action="addToCart" method="POST" style="width:100%;">
+                                {% csrf_token %}    
+                                <input name="order" value="beerthaHeadCover" type="hidden">
+                                <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
+                            </form>
+                        </div>
                     </div>
                     <div class="singleProductForSale" id="bigBeerthaPlus">
                         <img class="regularImage" src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}" onclick="displayBeertha('beerthaPlusInformation')">
                         <h4><b>The Big Beertha Plus</b></h4>
                         <h5>$49.00</h5>
-                        <form action="addToCart" method="POST">
-                            {% csrf_token %}
-                            <input name="order" value="bigBeerthaPlus" type="hidden">
-                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                        </form>
+                        <div class="twoButtons" style="display: flex">
+                            <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('beerthaPlusInformation')">View Product</button>
+                            <form action="addToCart" method="POST" style="width:100%;">
+                                {% csrf_token %}    
+                                <input name="order" value="bigBeerthaPlus" type="hidden">
+                                <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="oneRow">
@@ -154,26 +201,29 @@
                         <img class="regularImage" src="{% static 'img/Par3_550x825.jpeg' %}" onclick="displayBeertha('beerthaParThreeInformation')">
                         <h4><b>The Big Beertha - Par 3</b></h4>
                         <h5>$99.00</h5>
-                        <form action="addToCart" method="POST">
-                            {% csrf_token %}
-                            <input name="order" value="beerthaParThree" type="hidden">
-                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                        </form>
+                        <div class="twoButtons" style="display: flex">
+                            <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('beerthaParThreeInformation')">View Product</button>
+                            <form action="addToCart" method="POST" style="width:100%;">
+                                {% csrf_token %}    
+                                <input name="order" value="beerthaParThree" type="hidden">
+                                <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
+                            </form>
+                        </div>
                     </div>
                     <div class="singleProductForSale" id="beerthaFullSet">
                         <img class="regularImage" src="{% static 'img/multipleB.jpg' %}" onclick="displayBeertha('beerthaFullSetInformation')">
                         <h4><b>The Full Set</b></h4>
                         <h5>$399.00</h5>
-                        <form action="addToCart" method="POST">
-                            {% csrf_token %}    
-                            <input name="order" value="beerthaFullSet" type="hidden">
-                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                        </form>
-                    </div>
-                    <div class="singleProductForSale" id="beerthaFullSet">
-                        <div id="cartInfo">
-                            <h5 id="cartEmptyMessage">Your cart is empty</h5>
+                        <div class="twoButtons" style="display: flex">
+                            <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('beerthaFullSetInformation')">View Product</button>
+                            <form action="addToCart" method="POST" style="width:100%;">
+                                {% csrf_token %}    
+                                <input name="order" value="beerthaFullSet" type="hidden">
+                                <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
+                            </form>
                         </div>
+                    </div>
+                    <div class="singleProductForSale">
                         <form action="/checkout" method="POST">
                             {% csrf_token %}    
                             <input type="submit" value="Checkout" class="submitButton" id="checkoutButton">

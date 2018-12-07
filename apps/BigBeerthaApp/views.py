@@ -22,7 +22,14 @@ def index(request):
     return render(request, "index.html")
 
 def buyBeertha(request):
-    return render(request, "buyBeertha.html")
+    context = {
+        "singleBeertha" : request.session["singleBeertha"],
+        "beerthaHeadCover" : request.session["beerthaHeadCover"],
+        "bigBeerthaPlus" : request.session["bigBeerthaPlus"],
+        "beerthaParThree" : request.session["beerthaParThree"],
+        "beerthaFullSet" : request.session["beerthaFullSet"]
+    }
+    return render(request, "buyBeertha.html", context)
 
 def socialPage(request):
     return render(request, "social.html")
