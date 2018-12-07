@@ -1,0 +1,55 @@
+.displayImage{
+    width: 30%;
+    margin: 1.5%;
+}
+.displayVideo{
+    width: 45%;
+    height: 340px;
+    margin: 1.5%;
+    background-color: green;
+}
+.allContent{
+    width: 100%;
+}
+#allVideos{
+    display: block;
+}
+#bodyContainer{
+    width: 100%;
+}
+.centeredText{
+    text-align: center;
+}
+.uploadFile{
+    display: none;
+}
+#submissionForm{
+    width: 100%;
+}
+.inputfile + label {
+    border: none;
+    height: 40px;
+    margin-left: 5px;
+    padding: 12px;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #77dd77;
+    color: black;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}

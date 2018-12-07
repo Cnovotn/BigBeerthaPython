@@ -16,73 +16,238 @@
 <style>
 </style>
 <body>
+    <div id="hiddenInformation">
+        <div class="allInformation" id="singleBeerthaInformation" style="display: none">
+            <div class="closeTabButton">
+                <button onclick="closeTab('singleBeerthaInformation')" class="submitButton">Close</button>
+            </div>
+            <div style="display:flex;">
+                <div class="leftSideInfoPage">
+                    <div class="leftSideCursor" onclick="plusSlides(-1)">
+                        <a class="prev" style="color:white;">❮</a>
+                    </div>
+                    <div class="rightSideCursor" onclick="plusSlides(1)">
+                        <a class="next" style="color:white;">❯</a> 
+                    </div> 
+                    <img src="{% static 'img/FullSizeRender_550x825.jpg' %}" class="fullPageImage sliderImages">
+                    <img src="{% static 'img/singleBeerthaPhotos/beerthaImage1.jpg' %}" class="fullPageImage sliderImages">
+                    <img src="{% static 'img/singleBeerthaPhotos/close_up_280x420.jpeg' %}" class="fullPageImage sliderImages">
+                    <img src="{% static 'img/singleBeerthaPhotos/Top_Wood_280x420.jpg' %}" class="fullPageImage sliderImages">
+                </div>
+                <div class="rightSideInfoPage">
+                    <h1>The Big Beertha</h1>
+                    <h3>$44.00</h3>
+                    <p>
+                        The OG in the plastic.  The Big Beertha looks like a full sized golf driver, and stores best in your golf bag...only it's not a driver, its a highly adaptable drinking receptacle. 
+                    </p>
+                    <form action="addToCart" method="POST">
+                        {% csrf_token %}
+                        <input name="order" value="singleBeertha" type="hidden">
+                        <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="allInformation" id="beerthaHeadCoverInformation" style="display: none">
+            <div class="closeTabButton">
+                <button onclick="closeTab('beerthaHeadCoverInformation')"> Close </button>
+            </div>
+            <h1>Name Of Product</h1>
+            <div class="leftSideInfoPage">
+                <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
+            </div>
+            <div class="rightSideInfoPage">
+                <h3>$7.00</h3>
+                <p>
+                    Content about this product
+                </p>
+            </div>
+        </div>
+        <div class="allInformation" id="beerthaPlusInformation" style="display: none">
+            <div class="closeTabButton">
+                <button onclick="closeTab('beerthaPlusInformation')"> Close </button>
+            </div>
+            <h1>Name Of Product</h1>
+            <div class="leftSideInfoPage">
+                <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
+            </div>
+            <div class="rightSideInfoPage">
+                <h3>$49.00</h3>
+                <p>
+                    Content about this product
+                </p>
+            </div>
+        </div>
+        <div class="allInformation" id="beerthaParThreeInformation" style="display: none">
+            <div class="closeTabButton">
+                <button onclick="closeTab('beerthaParThreeInformation')"> Close </button>
+            </div>
+            <h1>Name Of Product</h1>
+            <div class="leftSideInfoPage">
+                <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
+            </div>
+            <div class="rightSideInfoPage">
+                <h3>$49.00</h3>
+                <p>
+                    Content about this product
+                </p>
+            </div>
+        </div>
+        <div class="allInformation" id="beerthaFullSetInformation" style="display: none">
+            <div class="closeTabButton">
+                <button onclick="closeTab('beerthaFullSetInformation')"> Close </button>
+            </div>
+            <h1>Name Of Product</h1>
+            <div class="leftSideInfoPage">
+                <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
+            </div>
+            <div class="rightSideInfoPage">
+                <h3>$49.00</h3>
+                <p>
+                    Content about this product
+                </p>
+            </div>
+        </div>
+    </div>
     <div id="mainContainer">
-        {% include 'header.html' %}
         <div id="bodyContainer">
             <div id="purchasingInformation">
-                <h2>Let's make golfing fun again!</h2>
+                <h2 style="text-align:center;"></h2>
             </div>
             <div id="allBeerthasForSale">
-                <div class="allInformation" id="singleBeerthaInfo" style="display: none">
-                    
-                </div>
+                <h1 style="text-align:center;">Buy the Beertha</h1>
                 <div class="oneRow">
                     <div class="singleProductForSale" id="singleBeertha">
-                        <img src="{% static 'img/FullSizeRender_550x825.jpg' %}">
+                        <img class="regularImage" src="{% static 'img/FullSizeRender_550x825.jpg' %}" onclick="displayBeertha('singleBeerthaInformation')">
                         <h4><b>The Big Beertha</b></h4>
                         <h5>$44.00</h5>
-                        <form action="addToCart" method="POST">
+                        <button value="Add To Cart" class="submitButton" style="width:100%;" onclick="addToCart('singleBeertha')">Add To Cart</button>
+                        <!-- <form action="addToCart" method="POST">
                             {% csrf_token %}
                             <input name="order" value="singleBeertha" type="hidden">
-                            <input type="submit" value="Add To Cart">
-                        </form>
+                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
+                        </form> -->
                     </div>
                     <div class="singleProductForSale" id="beerthaHeadCover">
-                        <img src="{% static 'img/BeerthaCover.jpeg' %}">
+                        <img class="regularImage" src="{% static 'img/BeerthaCover.jpeg' %}" onclick="displayBeertha('beerthaHeadCoverInformation')">
                         <h4><b>The Big Beertha Headcover</b></h4>
                         <h5>$7.00</h5>
                         <form action="addToCart" method="POST">
                             {% csrf_token %}    
                             <input name="order" value="beerthaHeadCover" type="hidden">
-                            <input type="submit" value="Add To Cart">
+                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
                         </form>
                     </div>
                     <div class="singleProductForSale" id="bigBeerthaPlus">
-                        <img src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}">
+                        <img class="regularImage" src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}" onclick="displayBeertha('beerthaPlusInformation')">
                         <h4><b>The Big Beertha Plus</b></h4>
                         <h5>$49.00</h5>
                         <form action="addToCart" method="POST">
                             {% csrf_token %}
                             <input name="order" value="bigBeerthaPlus" type="hidden">
-                            <input type="submit" value="Add To Cart">
+                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
                         </form>
                     </div>
                 </div>
                 <div class="oneRow">
                     <div class="singleProductForSale" id="beerthaParThree">
-                        <img src="{% static 'img/Par3_550x825.jpeg' %}">
+                        <img class="regularImage" src="{% static 'img/Par3_550x825.jpeg' %}" onclick="displayBeertha('beerthaParThreeInformation')">
                         <h4><b>The Big Beertha - Par 3</b></h4>
                         <h5>$99.00</h5>
                         <form action="addToCart" method="POST">
                             {% csrf_token %}
                             <input name="order" value="beerthaParThree" type="hidden">
-                            <input type="submit" value="Add To Cart">
+                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
                         </form>
                     </div>
                     <div class="singleProductForSale" id="beerthaFullSet">
-                        <img src="{% static 'img/multipleB.jpg' %}">
+                        <img class="regularImage" src="{% static 'img/multipleB.jpg' %}" onclick="displayBeertha('beerthaFullSetInformation')">
                         <h4><b>The Full Set</b></h4>
                         <h5>$399.00</h5>
                         <form action="addToCart" method="POST">
                             {% csrf_token %}    
                             <input name="order" value="beerthaFullSet" type="hidden">
-                            <input type="submit" value="Add To Cart">
+                            <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
+                        </form>
+                    </div>
+                    <div class="singleProductForSale" id="beerthaFullSet">
+                        <div id="cartInfo">
+                            <h5 id="cartEmptyMessage">Your cart is empty</h5>
+                        </div>
+                        <form action="/checkout" method="POST">
+                            {% csrf_token %}    
+                            <input type="submit" value="Checkout" class="submitButton" id="checkoutButton">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        {% include 'header.html' %}
         {% include 'footer.html' %}
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+var cart = {
+    "singleBeertha" : 0,
+    "beerthaHeadCover" : 0,
+    "bigBeerthaPlus" : 0,
+    "beerthaParThree" : 0,
+    "beerthaFullSet" : 0
+}
+function addToCart(itemAdded){
+    cart[itemAdded]++;
+    console.log(cart[itemAdded])
+}
+function emptyCart(){
+    var cart = {
+        "singleBeertha" : 0,
+        "beerthaHeadCover" : 0,
+        "bigBeerthaPlus" : 0,
+        "beerthaParThree" : 0,
+        "beerthaFullSet" : 0
+    }
+}
+function displayBeertha(displayed){
+    var elem = document.getElementById(displayed);
+    var main = document.getElementById("mainContainer");
+    elem.style.display = "block";
+    main.style.opacity = 0.5;
+}
+function closeTab(element){
+    var elem = document.getElementById(element);
+    var main = document.getElementById("mainContainer");
+    elem.style.display = "none";
+    main.style.opacity = 1.0;
+}
+var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("sliderImages");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+</script>
 </html>
