@@ -116,6 +116,9 @@
 .submitButton:hover{
     background-color: #77dd77;
 }
+.submitButton:focus{
+    outline: none;
+}
 #buyOnAmazon{
 
 }

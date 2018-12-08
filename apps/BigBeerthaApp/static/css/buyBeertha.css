@@ -21,6 +21,7 @@
 }
 .regularImage{
     width: 99%;
+    box-shadow: 8px 7px 23px 5px rgba(122,122,122,0.8);
 }
 .regularImage:hover{
     opacity: .75;

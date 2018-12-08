@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
-
+z
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -52,7 +52,6 @@ body {
     line-height: 1.5em;
     font-size: 18px;
 }
-
 /* Ronak Work */
 
 div[class*="box"] {

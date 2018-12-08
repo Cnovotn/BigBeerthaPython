@@ -11,6 +11,7 @@
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/underline.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/social.css' %}">
 </head>
 <style>
@@ -24,6 +25,10 @@
                 <button id="submitSection" class="submitButton" style="width:30%;">Submit Your Videos</button>
             </div>
             <div class="allContent" id="allSocialImages">
+                <div id="showVideoImageButtons">
+                    <button id="imageDisplayButton" class="displayChoiceButton" onclick="showImages('showImages')" style="text-decoration:underline"><h2>Pictures</h2></button>
+                    <button id="videoDisplayButton" class="displayChoiceButton" onclick="showVideos('showVideos')"><h2>Videos</h2></button>        
+                </div>
                 <div id="allImages" class="allContent">
                     <img class="displayImage" src="{% static 'img/InstaContent/d696b64f2d3c8bd658e159a1df4d1918.jpg' %}">
                     <img class="displayImage" src="{% static 'img/InstaContent/fe85c2d0fc56b96b8d98a580b05807a9.jpg' %}">
@@ -49,77 +54,241 @@
                     <img class="displayImage" src="{% static 'img/InstaContent/f991d3af56925c0e155714f40563cbba.jpg' %}">
                     <img class="displayImage" src="{% static 'img/InstaContent/f49ea1dbd734db7dc3792e4983ff435c.jpg' %}">
                 </div>
-                <div class="allVideos" class="allContent">
-                    <!-- <div class="displayVideo">
-                        <video class="singleVideo" width="100%" controls>
-                            <source src="{% static 'vid/1e8a0f018e31ee6d1d02d1140870017a.mp4' %}" type="video/mp4">
-                        </video>
+                <div id="allVideos" class="allContent">
+                    <div class="oneRowVideos">
+                        <!-- first row -->
+                        <div class="displayVideo">
+                            <!-- Girl on top of golf cart -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/4ae8784110b09c74277bc9669e48b592.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- dope wedding beertha present -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/6604344bfeffadf39477a775592dabb8.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- UO girl at tailgate -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/485d6400b8fb21317617e4a4629238db.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
-                    <div class="displayVideo">
-                        <video class="singleVideo" width="100%" controls>
-                            <source src="{% static 'vid/3d4e6ded04eb13321589fb2c1f296992.mp4' %}" type="video/mp4">
-                        </video>
+
+                    <div class="oneRowVideos">
+                        <!-- Second row -->
+                        <div class="displayVideo">
+                            <!-- Santa video -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/4f1455be4fec33a5be9387b1c8b2c82f.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- Backflip beertha at tailgate -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/5d95a14e5d6923ab798b09d22d95cd94.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- Golf course with friends -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/3d4e6ded04eb13321589fb2c1f296992.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
-                    <div class="displayVideo">
-                        <video class="singleVideo" width="100%" controls>
-                            <source src="{% static 'vid/3d4e6ded04eb13321589fb2c1f296992.mp4' %}" type="video/mp4">
-                        </video>
-                    </div> -->
-                    <div class="displayVideo">
-                        <video class="singleVideo" width="100%" controls>
-                            <source src="{% static 'vid/485d6400b8fb21317617e4a4629238db.mp4' %}" type="video/mp4">
-                        </video>
+                    <div class="oneRowVideos">
+                        <div class="displayVideo">
+                            <!-- Guy on boat fishing -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/49adbaa7c6aa9bca633bfe7209892637.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!--  green guy at golf course -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/75f115077c65f0a19b0952da13a989bc.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- joey catton pickin the tee up -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/76f9eabaec2d29fc791a218fb1fa43d7.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
-                    <!-- 97b430e0af261c7e312b0c5b9dd7e8a3.mp4 -> Beertha Video
-                    3f4a9d277042d8e81c7502f5cb2bad3a.mp4
-                    6604344bfeffadf39477a775592dabb8.mp4 -> Dope wedding Video
-                    4ae8784110b09c74277bc9669e48b592.mp4
-                    4dee456cd8612558901fdc08b82cb7de.mp4
-                    4f1455be4fec33a5be9387b1c8b2c82f.mp4
-                    5c1531d143b610dc4e2d825e99e1ca0c.mp4
-                    5d95a14e5d6923ab798b09d22d95cd94.mp4
-                    9ee9cb2dae41476c5fba733351d8670c.mp4
-                    9ff502ee7985337daa0fb324e1828bf1.mp4
-                    17ec656900ae5045520e72da06d58e54.mp4
-                    34a2db76191cddefba84406fc62f0b4e.mp4
-                    49adbaa7c6aa9bca633bfe7209892637.mp4
-                    75f115077c65f0a19b0952da13a989bc.mp4
-                    76f9eabaec2d29fc791a218fb1fa43d7.mp4 -> Joey 
-                    485d6400b8fb21317617e4a4629238db.mp4 -> Hot Girl 
-                    8047b3c72999a0809a936b90248e8356.mp4 -> Jake Clare promo 
-                    cad95c1ac2e556a9dcdf3b18759b5a1e.mp4 -> Guy in background
-                    39381f8704465d73a9391b3047a36bca.mp4 -> Needs Cropping
-                    71944b038066a846fa8f97ab822603f6.mp4 -> Needs Cropping
-                    ae259c2d91760cbb56a3987308932365.mp4 -> Needs Cropping
-                    a956444ede88a41f1ffbc1ceb2481a5d.mp4 -> Needs Cropping
-                    ba55318c6c3f85eca505e53dc0f7d93f.mp4 -> Needs cropping "happy thankgiving love beertha"
-                    bcb85235d33a0caf0765d8d98629f263.mp4 -> Needs cropping
-                    d570aa69f999efebaad07e648d470b56.mp4 -> Needs cropping, beautiful scenery
-                    f38294cc808d9ecd2436cd5db9735ef6.mp4 -> Needs cropping
-                    b0213b00527239ddf0b1f41a0d02934e.mp4 -> Glass pour at brewery
-                    fde5a03558f53e6b4dcb902f17c24cc9.mp4 -> Jake being an alcoholic by himself
-                    ffc79b96a59559a87721557abece0556.mp4 -> Needs cropping
-                    85b1a4cce06ab6dbc80f570059038647.mp4
-                    90d8354d6416b3a579e778cfcc4a2527.mp4
-                    90eb6f3e98132c553652a2747ca0c27e.mp4
-                    354a42f0a2faa711503e0b23e2633d33.mp4
-                    510ed2bb4ca986d4b1998d0bafe07508.mp4
-                    e77373a1b5cc3eec570609a9401bbf51.mp4 -> Guy on top of golf cart
-                    d652c8f54c7a232bb8353c37bf3201a8.mp4 -> Golfer in back driving
-                    e43b3a1ee3969544fa76363523eaa19a.mp4 -> "Best Club in the bag"
-                    933e7c24bc70b69279edd7f9ab676b89.mp4 -> Golfing
-                    155039428ddff52726040f30cbfd2dfd.mp4 -> Golfing 
-                    a2bbe3ce26de95af0449d176ba2770d4.mp4 -> Golfing
-                    a8663abb5c4ead34515ccf383a940831.mp4 -> On Tee Shotgunning
-                    b39c61b5922a9dfe661745d3f7dd6a96.mp4 -> Golfing then beerthaing
-                    c4dec8e4b92fd1bf2b4c2d50b93320f2.mp4 -> Golfing then beerthaing
-                    c3576c781358931fae6818ad15b7475c.mp4 -> Golfing
-                    b46bc15e2e7b404c9802db59651639d6.mp4 -> Fat Guy -->
+                    <div class="oneRowVideos">
+                        <!-- middle of the pack -->
+                        <div class="displayVideo">
+                            <!-- guy pouring on tee-->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/90eb6f3e98132c553652a2747ca0c27e.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- Mom in lving rooomg-->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/90d8354d6416b3a579e778cfcc4a2527.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!--  guy pouring on tee-->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/354a42f0a2faa711503e0b23e2633d33.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="oneRowVideos">
+                        <!-- All tall videos middle lower of the pack -->
+                        <div class="displayVideo">
+                            <!-- guy on ledge drinking beertha with backgorund-->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/a956444ede88a41f1ffbc1ceb2481a5d.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- dadds weekend snapchat-->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/71944b038066a846fa8f97ab822603f6.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!--  guy on ledge -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/ae259c2d91760cbb56a3987308932365.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="oneRowVideos">
+                        <!-- All square videos with some interesting content, towards lower -->
+                        <div class="displayVideo">
+                            <!-- chip shot in parking lot to drinking -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/155039428ddff52726040f30cbfd2dfd.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- ont top of golf cart  -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/e77373a1b5cc3eec570609a9401bbf51.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- friends around beertha -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/a8663abb5c4ead34515ccf383a940831.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="oneRowVideos">
+                        <div class="displayVideo">
+                            <!-- -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/8047b3c72999a0809a936b90248e8356.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!--   -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/cad95c1ac2e556a9dcdf3b18759b5a1e.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!--  -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/85b1a4cce06ab6dbc80f570059038647.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="oneRowVideos">
+                        <div class="displayVideo">
+                            <!-- Guy with patagonia hat on golf course -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/4dee456cd8612558901fdc08b82cb7de.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- frat boys at UO doubling  -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/9ff502ee7985337daa0fb324e1828bf1.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- "when the shots arent falling" snapchat -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/34a2db76191cddefba84406fc62f0b4e.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="oneRowVideos">
+                        <!-- All tall videos middle lower of the pack -->
+                        <div class="displayVideo">
+                            <!--  "this is how you start a tournament" -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/bcb85235d33a0caf0765d8d98629f263.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- guy on ledge drinking beertha with backgorund-->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/39381f8704465d73a9391b3047a36bca.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- dadds weekend snapchat-->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/ba55318c6c3f85eca505e53dc0f7d93f.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="oneRowVideos">
+                        <!-- all goling content with medium length height. Lower in the pack-->
+                        <div class="displayVideo">
+                            <!-- in tee box -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/b39c61b5922a9dfe661745d3f7dd6a96.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- dude pouring his own than pounding -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/c3576c781358931fae6818ad15b7475c.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- larger guy -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/b46bc15e2e7b404c9802db59651639d6.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="oneRowVideos">
+                        <div class="displayVideo">
+                            <!-- driver then drink -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/9ee9cb2dae41476c5fba733351d8670c.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- Fortnite win with beertha -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/1e8a0f018e31ee6d1d02d1140870017a.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="displayVideo">
+                            <!-- Chip shot with friend drinking -->
+                            <video class="singleVideo" width="100%" controls>
+                                <source src="{% static 'vid/5c1531d143b610dc4e2d825e99e1ca0c.mp4' %}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="submissionForm">
-            <h4 style="text-align:center;">Submit Your Content Here</h4>
+            <h4 style="text-align:center;" id="submitContentLine">Submit Your Beertha Videos</h4>
+            <p style="text-align:center;">For a chance to get feature on all social media accounts </p>
             <form action="/contentSubmission" method="POST" style="text-align: center;">
                 {% csrf_token %}
                 <input type="file" name="uploadMedia" accept="file_extension|audio/*|video/*|image/*|media_type" class="inputfile">
@@ -133,11 +302,26 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <script>
+    // all javascript functions
+    function showImages(func){
+        document.getElementById("allVideos").style.display = "none";
+        document.getElementById("allImages").style.display = "block";
+        document.getElementById("imageDisplayButton").style.textDecoration = "underline";
+        document.getElementById("videoDisplayButton").style.textDecoration = "none";
+    };
+    function showVideos(func){
+        document.getElementById("allVideos").style.display = "block";
+        document.getElementById("allImages").style.display = "none";
+        document.getElementById("imageDisplayButton").style.textDecoration = "none";
+        document.getElementById("videoDisplayButton").style.textDecoration = "underline";
+    };
+    // All JQuery scrolling functions
     $(document).ready(function (){
         $("#submitSection").click(function (){
             $('html, body').animate({
                 scrollTop: $("#submissionForm").offset().top - 100
             }, 1000);
+            $('#submitContentLine').addClass("blink_me");
         });
     });
 </script>

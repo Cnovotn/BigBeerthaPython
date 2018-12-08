@@ -1,18 +1,45 @@
 .displayImage{
     width: 30%;
     margin: 1.5%;
+    box-shadow: 8px 7px 23px 5px grey;
 }
 .displayVideo{
-    width: 45%;
-    height: 340px;
+    width: 30%;
     margin: 1.5%;
-    background-color: green;
+    box-shadow: 8px 7px 23px 5px grey;
+}
+.oneRowVideos{
+    display: flex;
 }
 .allContent{
     width: 100%;
 }
 #allVideos{
+    display: none;
+    width: 100%;
+}
+
+#allImages{
     display: block;
+}
+#showVideoImageButtons{
+    width: 100%;
+    text-align: center;
+}
+.displayChoiceButton{
+    border: none;
+    width: 33%;
+    margin-left: 5px;
+    padding: 10px;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.displayChoiceButton:focus{
+    outline: none;
 }
 #bodyContainer{
     width: 100%;
@@ -25,6 +52,9 @@
 }
 #submissionForm{
     width: 100%;
+}
+.submitButton:focus{
+    outline: none;
 }
 .inputfile + label {
     border: none;
@@ -52,4 +82,14 @@
 	overflow: hidden;
 	position: absolute;
 	z-index: -1;
+}
+.blink_me {
+    animation: blinker 1.5s linear 3;
+    animation-delay: 1s;
+}
+
+@keyframes blinker {
+50% {
+    opacity: 0.2;
+}
 }
