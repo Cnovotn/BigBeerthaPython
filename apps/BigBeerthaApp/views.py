@@ -1,40 +1,78 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from instagram.client import InstagramAPI
 from jinja2 import Template
+import smtplib
+import os,email
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEBase import MIMEBase
+from email.MIMEText import MIMEText
+from email import Encoders
 import requests, json
 # import shopify
 
 def index(request):
-    # only returns 20 of the most recent media instances
-    # route = "https://api.instagram.com/v1/users/self/media/recent/?access_token=" + config.api_key
-    # all_media = requests.get(route)
-    # json_media = all_media.json()
-    # json_data = json_media["data"]
-    # new_json_data_images = []
-    # new_json_data_videos = []
-    # for data in json_data:
-    #     if data["type"] == "image":
-    #         new_json_data_images.append(data["images"]["standard_resolution"]["url"])
-    #     elif data["type"] == "video":
-    #         new_json_data_videos.append(data["videos"]["standard_resolution"]["url"])
-    # context = {
-    #     "images" : new_json_data_images,
-    #     "videos" : new_json_data_videos
-    # }
-
+    request.session["singleBeertha"] = 0
+    request.session["beerthaHeadCover"] = 0
+    request.session["bigBeerthaPlus"] = 0
+    request.session["beerthaParThree"] = 0
+    request.session["beerthaFullSet"] = 0
     return render(request, "index.html")
 
 def buyBeertha(request):
-    return render(request, "buyBeertha.html")
+    context = {
+        "singleBeertha" : request.session["singleBeertha"],
+        "beerthaHeadCover" : request.session["beerthaHeadCover"],
+        "bigBeerthaPlus" : request.session["bigBeerthaPlus"],
+        "beerthaParThree" : request.session["beerthaParThree"],
+        "beerthaFullSet" : request.session["beerthaFullSet"]
+    }
+    return render(request, "buyBeertha.html", context)
 
 def socialPage(request):
     return render(request, "social.html")
 
+def contentSubmission(request):
+    if request.method == "POST":
+        uploadedContent = request.POST["uploadMedia"]
+        s=send_mail("clayton-oscar@msn.com","clayton-novotney@msn.com","Mail test","Message",uploadedContent)  # Edit
+        if (s.keys()==[]):
+            print "Message Sent!!!!!!!!!"
+        else:
+            print "Error!!!!"
+    return redirect("/social")
+
+
 def contactPage(request):
     return render(request, "contact.html")
+
+def addToCart(request):
+    if request.method == "POST":
+        thisOrder = request.POST["order"]
+        print thisOrder
+        oldCart = request.session[str(thisOrder)]
+        newCart = oldCart + 1
+        request.session[str(thisOrder)] = newCart
+        print newCart
+    return render(request, "buyBeertha.html")
+
+def viewCart(request):
+    return render(request, "viewCart.html")
+
+def checkout(request):
+    return HttpResponse("Redirecting to shopify checkout page")
+
+def emptyCart(request):
+    request.session["singleBeertha"] = 0
+    request.session["beerthaHeadCover"] = 0
+    request.session["bigBeerthaPlus"] = 0
+    request.session["beerthaParThree"] = 0
+    request.session["beerthaFullSet"] = 0
+    return redirect("/buyBeertha")
+    
+
 # # Replace the following with your shop URL
 # shop_url = "https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin"
 # shopify.ShopifyResource.set_site(shop_url)
@@ -68,3 +106,27 @@ def contactPage(request):
 #         "variant_id": new_product.variants[0].id
 #     }]
 # new_order.save()
+
+def send_mail(send_from, send_to, subject, text, file):
+    msg = MIMEMultipart()
+    msg['From'] = send_from
+    msg['To'] = send_to
+    msg['Date'] = " Use any date time module to insert or use email.utils formatdate"
+    msg['Subject'] = subject
+    
+    msg.attach( MIMEText(text) )
+    part = MIMEBase('application', "octet-stream")
+    fo=open(file,"rb")
+    part.set_payload(fo.read() )
+    Encoders.encode_base64(part)
+    part.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(file))
+    msg.attach(part)
+
+    smtp = smtplib.SMTP("smtp.gmail.com",587) #Email id  for yahoo use smtp.mail.yahoo.com
+    smtp.ehlo()
+    smtp.starttls  #in yahoo use smtplib.SMTP_SSL()
+    smtp.ehlo()
+    smtp.login("ur id","password") #Edit
+    sent=smtp.sendmail(send_from, send_to, msg.as_string())
+    smtp.close()
+    return sent

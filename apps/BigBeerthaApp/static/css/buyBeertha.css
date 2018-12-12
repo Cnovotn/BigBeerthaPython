@@ -1,9 +1,90 @@
-/* Clayton Work */
 .singleProductForSale{
-    width: 30%;
+    width: 32%;
+    margin: 1%;
 }
 #allBeerthasForSale{
     width: 100%;
-    display: inline-block;
 }
-/* Ronak Work */
+.oneRow{
+    width: 100%;
+    display: flex;
+}
+#checkoutButton{
+    width: 100%;
+}
+#cartInfo{
+    width: 100%;
+    height: 92%;
+}
+#cartEmptyMessage{
+    text-align: center;
+}
+.regularImage{
+    width: 99%;
+    box-shadow: 8px 7px 23px 5px rgba(122,122,122,0.8);
+}
+.regularImage:hover{
+    opacity: .75;
+    transition: 0.3s;
+}
+
+/* View Image Div Opening*/
+.allInformation{
+    background-color: #66bd61;
+    position: fixed;
+    left: 10%;
+    right: 10%;
+    top: 25%;
+    z-index: 3;
+    display: none;
+    border-radius: 2px;
+    box-shadow: 8px 7px 23px 5px rgba(122,122,122,0.8);
+}
+.leftSideInfoPage{
+    width: 60%;
+}
+.rightSideInfoPage{
+    width: 40%;
+    text-align: center;
+}
+.fullPageImage{
+    width: 70%;
+    margin-left: 15%;
+}
+.closeTabButton{
+    float: right;
+    margin: 1%;
+}
+.leftSideCursor, .rightSideCursor{
+    cursor: pointer;
+    position: absolute;
+    width: 30%;
+    height: 100%;
+}
+.leftSideCursor{
+}
+.rightSideCursor{
+    right: 40%;
+}
+.leftSideCursor:hover, .rightSideCursor:hover{
+    opacity: .1;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s; 
+}
+.prev, .next{
+  cursor: pointer;
+  position: absolute;
+  top: 35%;
+  width: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
