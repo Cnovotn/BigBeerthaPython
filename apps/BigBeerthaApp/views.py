@@ -6,9 +6,9 @@ from instagram.client import InstagramAPI
 from jinja2 import Template
 import smtplib
 import os,email
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEBase import MIMEBase
-from email.MIMEText import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email.mime.text import MIMEText
 from email import Encoders
 import requests, json
 # import shopify
@@ -39,9 +39,9 @@ def contentSubmission(request):
         uploadedContent = request.POST["uploadMedia"]
         s=send_mail("clayton-oscar@msn.com","clayton-novotney@msn.com","Mail test","Message",uploadedContent)  # Edit
         if (s.keys()==[]):
-            print "Message Sent!!!!!!!!!"
+            print("Message Sent!!!!!!!!!")
         else:
-            print "Error!!!!"
+            print("Error!!!!")
     return redirect("/social")
 
 
@@ -51,11 +51,11 @@ def contactPage(request):
 def addToCart(request):
     if request.method == "POST":
         thisOrder = request.POST["order"]
-        print thisOrder
+        print(thisOrder)
         oldCart = request.session[str(thisOrder)]
         newCart = oldCart + 1
         request.session[str(thisOrder)] = newCart
-        print newCart
+        print(newCart)
     return render(request, "buyBeertha.html")
 
 def viewCart(request):
@@ -71,7 +71,7 @@ def emptyCart(request):
     request.session["beerthaParThree"] = 0
     request.session["beerthaFullSet"] = 0
     return redirect("/buyBeertha")
-    
+
 
 # # Replace the following with your shop URL
 # shop_url = "https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin"
@@ -113,7 +113,7 @@ def send_mail(send_from, send_to, subject, text, file):
     msg['To'] = send_to
     msg['Date'] = " Use any date time module to insert or use email.utils formatdate"
     msg['Subject'] = subject
-    
+
     msg.attach( MIMEText(text) )
     part = MIMEBase('application', "octet-stream")
     fo=open(file,"rb")
