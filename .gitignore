@@ -1,11 +1,6 @@
 *.pyc
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 config.py
 __pycache__
 .ipynb_checkpoints
-=======
->>>>>>> Ronak
->>>>>>> 39b11954a01ca98c3f17a31ea85d064a53f6addb
 .DS_Store
+db.sqlite3
