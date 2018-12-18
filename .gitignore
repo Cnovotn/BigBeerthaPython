@@ -2,5 +2,9 @@
 config.py
 __pycache__
 .ipynb_checkpoints
+<<<<<<< HEAD
 db.sqlite3
+=======
+>>>>>>> ronak
 .DS_Store
+db.sqlite3

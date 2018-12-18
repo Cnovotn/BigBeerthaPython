@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .singleProductForSale{
     width: 32%;
     margin: 1%;
@@ -88,3 +89,57 @@
     right: 0;
     border-radius: 3px 0 0 3px;
 }
+=======
+.row{
+  padding: 15px;
+}
+.productCard{
+  display: flex;
+  overflow: auto;
+  background: #F5F5F5;
+  box-shadow: 0px 3px 15px rgba(00, 0, 00, 0.2);
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+.productInfo{
+  width: 33vh;
+  margin: 47px;
+  margin-right: 0px;
+}
+.productCard img{
+  width: 300px;
+  height: 370px;
+  box-shadow: 0px 3px 15px rgba(00, 0, 00, 0.2);
+  border-radius: 5px;
+}
+.productCard h2{
+  color: #66bd61;
+}
+.productCard button {
+  background: #76cd71;
+  padding: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: -1px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #F5F5F5;
+  cursor: pointer;
+  width: 100%;
+}
+.productCard button:hover {
+  background: #66bd61;
+  transition: all .4s ease-in-out;
+}
+.center{
+  text-align: center;
+}
+.cartLogo{
+  width: 10%;
+  height: 10%;
+}
+>>>>>>> ronak

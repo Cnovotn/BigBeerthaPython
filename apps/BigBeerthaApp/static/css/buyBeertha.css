@@ -1,90 +1,52 @@
-.singleProductForSale{
-    width: 32%;
-    margin: 1%;
+.row{
+  padding: 15px;
 }
-#allBeerthasForSale{
-    width: 100%;
+.productCard{
+  display: flex;
+  overflow: auto;
+  background: #F5F5F5;
+  box-shadow: 0px 3px 15px rgba(00, 0, 00, 0.2);
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
 }
-.oneRow{
-    width: 100%;
-    display: flex;
+.productInfo{
+  width: 33vh;
+  margin: 47px;
+  margin-right: 0px;
 }
-#checkoutButton{
-    width: 100%;
+.productCard img{
+  width: 300px;
+  height: 370px;
+  box-shadow: 0px 3px 15px rgba(00, 0, 00, 0.2);
+  border-radius: 5px;
 }
-#cartInfo{
-    width: 100%;
-    height: 92%;
+.productCard h2{
+  color: #66bd61;
 }
-#cartEmptyMessage{
-    text-align: center;
-}
-.regularImage{
-    width: 99%;
-    box-shadow: 8px 7px 23px 5px rgba(122,122,122,0.8);
-}
-.regularImage:hover{
-    opacity: .75;
-    transition: 0.3s;
-}
-
-/* View Image Div Opening*/
-.allInformation{
-    background-color: #66bd61;
-    position: fixed;
-    left: 10%;
-    right: 10%;
-    top: 25%;
-    z-index: 3;
-    display: none;
-    border-radius: 2px;
-    box-shadow: 8px 7px 23px 5px rgba(122,122,122,0.8);
-}
-.leftSideInfoPage{
-    width: 60%;
-}
-.rightSideInfoPage{
-    width: 40%;
-    text-align: center;
-}
-.fullPageImage{
-    width: 70%;
-    margin-left: 15%;
-}
-.closeTabButton{
-    float: right;
-    margin: 1%;
-}
-.leftSideCursor, .rightSideCursor{
-    cursor: pointer;
-    position: absolute;
-    width: 30%;
-    height: 100%;
-}
-.leftSideCursor{
-}
-.rightSideCursor{
-    right: 40%;
-}
-.leftSideCursor:hover, .rightSideCursor:hover{
-    opacity: .1;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s; 
-}
-.prev, .next{
+.productCard button {
+  background: #76cd71;
+  padding: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: -1px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #F5F5F5;
   cursor: pointer;
-  position: absolute;
-  top: 35%;
-  width: 50%;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 50px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+  width: 100%;
 }
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.productCard button:hover {
+  background: #66bd61;
+  transition: all .4s ease-in-out;
+}
+.center{
+  text-align: center;
+}
+.cartLogo{
+  width: 10%;
+  height: 10%;
 }
