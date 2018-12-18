@@ -1,7 +1,10 @@
 from django.conf.urls import url
-from . import views           # This line is new!
+from . import views     
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
-    url(r'^$', views.index),   # this says "any request sent to this route, have views.py handle the request.
+    url(r'^$', views.index),
     url(r'^buyBeertha$', views.buyBeertha),
     url(r'^social$', views.socialPage),
     url(r'^contentSubmission$', views.contentSubmission),
@@ -10,4 +13,4 @@ urlpatterns = [
     url(r'^viewCart$', views.viewCart),
     url(r'^emptyCart$', views.emptyCart),
     url(r'^checkout$', views.checkout)
-] 
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
