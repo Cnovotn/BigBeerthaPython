@@ -2,19 +2,6 @@
 <html>
 
 <head>
-<<<<<<< HEAD
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Big Beertha</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/underline.css' %}">
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/buyBeertha.css' %}">
-=======
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Big Beertha</title>
@@ -26,397 +13,194 @@
   <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/buyBeertha.css' %}">
->>>>>>> ronak
 </head>
 <style>
 </style>
 
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-top:15%;">
     <div class="row">
-      <div class="col">
-        <div class="productCard">
-          <img src="{% static 'img/FullSizeRender_550x825.jpg' %}" alt="render.jpg">
-          <div class="productInfo">
-            <h1>The Big Beertha</h1>
-            <h2>$44</h2>
-            <p class="desc">
-              The OG in the plastic. The Big Beertha looks like a full sized golf driver, and stores best in your golf bag...only it's not a driver, its a highly adaptable drinking receptacle.
-            </p>
-            <div class="buttons">
-              <button class="add">Add to Cart</button>
+        <div class="col">
+            <div class="productCard">
+                <div id="coverImages">
+                    <img src="{% static 'img/singleBeerthaPhotos/close_up_280x420.jpeg' %}" alt="render.jpg" class="bottom"> 
+                    <img src="{% static 'img/FullSizeRender_550x825.jpg' %}" alt="render.jpg" class="top">
+                </div>
+                <div class="productInfo">
+                    <h1>The Big Beertha</h1>
+                    <h2>$44</h2>
+                    <p class="desc">
+                    The OG in the plastic. The Big Beertha looks like a full sized golf driver, and stores best in your golf bag...only it's not a driver, its a highly adaptable drinking receptacle.
+                    </p>
+                    <div class="buttons">
+                        <button class="add" onclick="addToCart('singleBeertha')">Add to Cart</button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="productCard">
-          <img src="{% static 'img/BeerthaCover.jpeg' %}" alt="render.jpg">
-          <div class="productInfo">
-            <h1>Beertha Head Cover</h1>
-            <h2>$44</h2>
-            <p class="desc">
-              Get your Big Beertha out on the course incognito, only unveiling it to your foursome when they least expect it. One brand new Big Beertha, fresh from the press, along with one of our custom club head covers.
-            </p>
-            <div class="buttons">
-              <button class="add">Add to Cart</button>
+        <div class="col">
+            <div class="productCard">
+                <div id="coverImages">
+                    <img src="{% static 'img/singleBeerthaPhotos/IMG_0440.JPG' %}" alt="render.jpg" class="bottom"> 
+                    <img src="{% static 'img/BeerthaCover.jpeg' %}" alt="render.jpg" class="top">
+                </div>
+                <div class="productInfo">
+                <h1>Beertha Head Cover</h1>
+                <h2>$7</h2>
+                <p class="desc">
+                    Get your Big Beertha out on the course incognito, only unveiling it to your foursome when they least expect it. One brand new Big Beertha, fresh from the press, along with one of our custom club head covers.
+                </p>
+                <div class="buttons">
+                    <button class="add" onclick="addToCart('headCover')">Add to Cart</button>
+                </div>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="productCard">
+                <div id="coverImages">
+                    <img src="{% static 'img/singleBeerthaPhotos/Top_Wood_280x420.jpg' %}" alt="render.jpg" class="bottom"> 
+                    <img src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}" alt="render.jpg" class="top">
+                </div>
+                <div class="productInfo">
+                    <h1>The Beertha Plus</h1>
+                    <h2>$49</h2>
+                    <p class="desc">
+                        Get your Big Beertha out on the course incognito, only unveiling it to your foursome when they least expect it. One brand new Big Beertha, fresh from the press, along with one of our custom club head covers.
+                    </p>
+                    <div class="buttons">
+                        <button class="add" onclick="addToCart('bigBeerthaPlus')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="productCard">
+                <div id="coverImages">
+                    <img src="{% static 'img/6445d972d74a09edcbcba1493b690d47_original.jpeg' %}" alt="render.jpg" class="bottom"> 
+                    <img src="{% static 'img/Par3_550x825.jpeg' %}" alt="render.jpg" class="top">
+                </div>
+                <div class="productInfo">
+                    <h1>The Par Three</h1>
+                    <h2>$119</h2>
+                    <p class="desc">
+                        Want more than one Big Beertha? Get 3 Beerthas with the Par 3 box and save money. You cannot beat this deal!
+                    </p>
+                    <div class="buttons">
+                        <button class="add" onclick="addToCart('beerthaParThree')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
       <div class="col">
         <div class="productCard">
-          <img src="{% static 'img/FullSizeRender_550x825.jpg' %}" alt="render.jpg">
+          <img src="{% static 'img/multipleB.jpg' %}" alt="render.jpg">
           <div class="productInfo">
-            <h1>The Big Beertha</h1>
-            <h2>$44</h2>
-            <p class="desc">
-              The OG in the plastic. The Big Beertha looks like a full sized golf driver, and stores best in your golf bag...only it's not a driver, its a highly adaptable drinking receptacle.
-            </p>
-            <div class="buttons">
-              <button class="add">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="productCard">
-          <img src="{% static 'img/FullSizeRender_550x825.jpg' %}" alt="render.jpg">
-          <div class="productInfo">
-            <h1>The Big Beertha</h1>
-            <h2>$44</h2>
-            <p class="desc">
-              The OG in the plastic. The Big Beertha looks like a full sized golf driver, and stores best in your golf bag...only it's not a driver, its a highly adaptable drinking receptacle.
-            </p>
-            <div class="buttons">
-              <button class="add">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="productCard">
-          <img src="{% static 'img/FullSizeRender_550x825.jpg' %}" alt="render.jpg">
-          <div class="productInfo">
-            <h1>The Big Beertha</h1>
-            <h2>$44</h2>
-            <p class="desc">
-              The OG in the plastic. The Big Beertha looks like a full sized golf driver, and stores best in your golf bag...only it's not a driver, its a highly adaptable drinking receptacle.
-            </p>
-            <div class="buttons">
-              <button class="add">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col center">
-        <div class="cartButton">
-          <div class="cartLogo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-              <path d="M551.991 64H129.28l-8.329-44.423C118.822 8.226 108.911 0 97.362 0H12C5.373 0 0 5.373 0 12v8c0 6.627 5.373 12 12 12h78.72l69.927 372.946C150.305 416.314 144 431.42 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0 0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0 64-28.654 64-64 0-17.993-7.435-34.24-19.388-45.868C506.022 391.891 496.76 384 485.328 384H189.28l-12-64h331.381c11.368 0 21.177-7.976 23.496-19.105l43.331-208C578.592 77.991 567.215 64 551.991 64zM240 448c0 17.645-14.355 32-32 32s-32-14.355-32-32 14.355-32 32-32 32 14.355 32 32zm224 32c-17.645 0-32-14.355-32-32s14.355-32 32-32 32 14.355 32 32-14.355 32-32 32zm38.156-192H171.28l-36-192h406.876l-40 192z" /></svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Clayton -->
-    <div id="hiddenInformation">
-      <div class="allInformation" id="addedToCartMessage" style="display:none">
-        <div class="closeTabButton">
-          <button onclick="closeTab('addedToCartMessage')" class="submitButton">Close</button>
-        </div>
-        <div style="text-align:center">
-          <h1>Your Current Cart</h1>
-        </div>
-        <form action="/checkout" method="POST">
-          {% csrf_token %}
-          <input type="submit" value="Checkout" class="submitButton" id="checkoutButton">
-        </form>
-      </div>
-      <div class="allInformation" id="singleBeerthaInformation" style="display: none">
-        <div class="closeTabButton">
-          <button onclick="closeTab('singleBeerthaInformation')" class="submitButton">Close</button>
-        </div>
-        <div style="display:flex;">
-          <div class="leftSideInfoPage">
-            <div class="leftSideCursor" onclick="plusSlides(-1)">
-              <a class="prev" style="color:white;">❮</a>
-            </div>
-            <div class="rightSideCursor" onclick="plusSlides(1)">
-              <a class="next" style="color:white;">❯</a>
-            </div>
-            <img src="{% static 'img/FullSizeRender_550x825.jpg' %}" class="fullPageImage sliderImages">
-            <img src="{% static 'img/singleBeerthaPhotos/beerthaImage1.jpg' %}" class="fullPageImage sliderImages">
-            <img src="{% static 'img/singleBeerthaPhotos/close_up_280x420.jpeg' %}" class="fullPageImage sliderImages">
-            <img src="{% static 'img/singleBeerthaPhotos/Top_Wood_280x420.jpg' %}" class="fullPageImage sliderImages">
-          </div>
-          <div class="rightSideInfoPage">
-            <h1>The Big Beertha</h1>
-            <h3>$44.00</h3>
-            <p>
-              The OG in the plastic. The Big Beertha looks like a full sized golf driver, and stores best in your golf bag...only it's not a driver, its a highly adaptable drinking receptacle.
-            </p>
-            <form action="addToCart" method="POST">
-              {% csrf_token %}
-              <input name="order" value="singleBeertha" type="hidden">
-              <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="allInformation" id="beerthaHeadCoverInformation" style="display: none">
-        <div class="closeTabButton">
-          <button onclick="closeTab('beerthaHeadCoverInformation')" class="submitButton">Close</button>
-        </div>
-        <div style="display:flex;">
-          <div class="leftSideInfoPage">
-            <img src="{% static 'img/BeerthaCover.jpeg' %}" class="fullPageImage ">
-          </div>
-          <div class="rightSideInfoPage">
-            <h1>Beertha Head Cover</h1>
-            <h3>$7.00</h3>
-            <p>
-              One of our oversized club head covers, customized with The Big Beertha logo. Protect your Beertha at all costs!
-            </p>
-            <form action="addToCart" method="POST">
-              {% csrf_token %}
-              <input name="order" value="beerthaHeadCover" type="hidden">
-              <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="allInformation" id="beerthaPlusInformation" style="display: none">
-        <div class="closeTabButton">
-          <button onclick="closeTab('beerthaPlusInformation')" class="submitButton">Close</button>
-        </div>
-        <div style="display:flex;">
-          <div class="leftSideInfoPage">
-            <img src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}" class="fullPageImage">
-          </div>
-          <div class="rightSideInfoPage">
-            <h1>The Big Beertha Plus</h1>
-            <h3>$49.00</h3>
-            <p>
-              Get your Big Beertha out on the course incognito, only unveiling it to your foursome when they least expect it. One brand new Big Beertha, fresh from the press, along with one of our custom club head covers.
-            </p>
-            <form action="addToCart" method="POST">
-              {% csrf_token %}
-              <input name="order" value="singleBeertha" type="hidden">
-              <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="allInformation" id="beerthaParThreeInformation" style="display: none">
-        <div class="closeTabButton">
-          <button onclick="closeTab('beerthaParThreeInformation')" class="submitButton">Close</button>
-        </div>
-        <div style="display:flex;">
-          <div class="leftSideInfoPage">
-            <img src="{% static 'img/Par3_550x825.jpeg' %}" class="fullPageImage">
-          </div>
-          <div class="rightSideInfoPage">
-            <h1>Par Three</h1>
-            <h3>$117.00</h3>
-            <p>
-              Want more than one Big Beertha? Get 3 Beerthas with the Par 3 box and save money. You cannot beat this deal!
-            </p>
-            <form action="addToCart" method="POST">
-              {% csrf_token %}
-              <input name="order" value="beerthaParThree" type="hidden">
-              <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="allInformation" id="beerthaFullSetInformation" style="display: none">
-        <div class="closeTabButton">
-          <button onclick="closeTab('beerthaFullSetInformation')" class="submitButton">Close</button>
-        </div>
-        <div style="display:flex;">
-          <div class="leftSideInfoPage">
-            <img src="{% static 'img/multipleB.jpg' %}" class="fullPageImage">
-          </div>
-          <div class="rightSideInfoPage">
             <h1>Full Set</h1>
-            <h3>$399.00</h3>
-            <p>
-              Need a lot of Big Beerthas for an event or tourney? Or maybe you live in a frat house. Maybe you just enjoy the satisfaction one feels when extending a fresh new Beertha to good friends, thereby enriching their lives. The Full Set
-              includes 12 Big Beerthas delivered right to your door.
+            <h2>$399</h2>
+            <p class="desc">
+                Need a lot of Big Beerthas for an event or tourney? Or maybe you live in a frat house. Maybe you just enjoy the satisfaction one feels when extending a fresh new Beertha to good friends, thereby enriching their lives. The Full Set
+                includes 12 Big Beerthas delivered right to your door.
             </p>
-            <form action="addToCart" method="POST">
-              {% csrf_token %}
-              <input name="order" value="beerthaFullSet" type="hidden">
-              <input type="submit" value="Add To Cart" class="submitButton" style="width:98%;">
-            </form>
+            <div class="buttons">
+              <button class="add" onclick="addToCart('beerthaFullSet')">Add to Cart</button>
+            </div>
           </div>
         </div>
       </div>
+      <div class="row">
+          <!-- <Make the checkout card look better  -->
+        <div class="col card" onload="updatedCart()">
+            <h1>Your Cart</h1>
+            <ul class="verticalList">
+                <li id="singleBeerthaQuantity">Big Beertha: 0</li>
+                <li id="headCoverQuantity">Head Cover: 0</li>
+                <li id="beerthaPlusQuantity">Beertha Plus: 0</li>
+                <li id="parThreeQuantity">Par Three: 0</li>
+                <li id="fullSetQuantity">Full Set: 0</li>
+                <li><h2 id="cartTotal">Total: $0.00</h2></li>
+            </ul>
+            <h1 id="cartTotal"></h1>
+            <div class="buttons">
+                <button class="add">View Cart</button>
+            </div>
+        </div>
     </div>
-    <div id="mainContainer">
-      <div id="bodyContainer">
-        <div id="purchasingInformation">
-          <h2 style="text-align:center;"></h2>
-        </div>
-        <div id="allBeerthasForSale">
-          <div class="oneRow">
-            <div class="singleProductForSale" id="singleBeertha">
-              <img class="regularImage" src="{% static 'img/FullSizeRender_550x825.jpg' %}" onclick="displayBeertha('singleBeerthaInformation')">
-              <h4><b>The Big Beertha</b></h4>
-              <h5>$44.00</h5>
-              <div class="twoButtons" style="display: flex">
-                <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('singleBeerthaInformation')">View Product</button>
-                <form action="addToCart" method="POST" style="width:100%;">
-                  {% csrf_token %}
-                  <input name="order" value="singleBeertha" type="hidden">
-                  <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                </form>
-              </div>
-            </div>
-            <div class="singleProductForSale" id="beerthaHeadCover">
-              <img class="regularImage" src="{% static 'img/BeerthaCover.jpeg' %}" onclick="displayBeertha('beerthaHeadCoverInformation')">
-              <h4><b>The Big Beertha Headcover</b></h4>
-              <h5>$7.00</h5>
-              <div class="twoButtons" style="display: flex">
-                <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('beerthaHeadCoverInformation')">View Product</button>
-                <form action="addToCart" method="POST" style="width:100%;">
-                  {% csrf_token %}
-                  <input name="order" value="beerthaHeadCover" type="hidden">
-                  <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                </form>
-              </div>
-            </div>
-            <div class="singleProductForSale" id="bigBeerthaPlus">
-              <img class="regularImage" src="{% static 'img/UndercoverBeertha_550x825.jpeg' %}" onclick="displayBeertha('beerthaPlusInformation')">
-              <h4><b>The Big Beertha Plus</b></h4>
-              <h5>$49.00</h5>
-              <div class="twoButtons" style="display: flex">
-                <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('beerthaPlusInformation')">View Product</button>
-                <form action="addToCart" method="POST" style="width:100%;">
-                  {% csrf_token %}
-                  <input name="order" value="bigBeerthaPlus" type="hidden">
-                  <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="oneRow">
-            <div class="singleProductForSale" id="beerthaParThree">
-              <img class="regularImage" src="{% static 'img/Par3_550x825.jpeg' %}" onclick="displayBeertha('beerthaParThreeInformation')">
-              <h4><b>The Big Beertha - Par 3</b></h4>
-              <h5>$99.00</h5>
-              <div class="twoButtons" style="display: flex">
-                <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('beerthaParThreeInformation')">View Product</button>
-                <form action="addToCart" method="POST" style="width:100%;">
-                  {% csrf_token %}
-                  <input name="order" value="beerthaParThree" type="hidden">
-                  <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                </form>
-              </div>
-            </div>
-            <div class="singleProductForSale" id="beerthaFullSet">
-              <img class="regularImage" src="{% static 'img/multipleB.jpg' %}" onclick="displayBeertha('beerthaFullSetInformation')">
-              <h4><b>The Full Set</b></h4>
-              <h5>$399.00</h5>
-              <div class="twoButtons" style="display: flex">
-                <button value="Add To Cart" class="submitButton" style="width:50%;" onclick="displayBeertha('beerthaFullSetInformation')">View Product</button>
-                <form action="addToCart" method="POST" style="width:100%;">
-                  {% csrf_token %}
-                  <input name="order" value="beerthaFullSet" type="hidden">
-                  <input type="submit" value="Add To Cart" class="submitButton" style="width:100%;">
-                </form>
-              </div>
-            </div>
-            <div class="singleProductForSale">
-              <form action="/checkout" method="POST">
-                {% csrf_token %}
-                <input type="submit" value="Checkout" class="submitButton" id="checkoutButton">
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   {% include 'header.html' %}
   {% include 'footer.html' %}
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <script>
-  var cart = {
+
+var cart = {
     "singleBeertha": 0,
-    "beerthaHeadCover": 0,
+    "headCover": 0,
     "bigBeerthaPlus": 0,
     "beerthaParThree": 0,
-    "beerthaFullSet": 0
-  }
-
-  function addToCart(itemAdded) {
+    "beerthaFullSet": 0,
+    "total": 0
+}
+function addToCart(itemAdded) {
     cart[itemAdded]++;
-    console.log(cart[itemAdded])
-  }
-
-  function emptyCart() {
+    updatedCart();
+}
+function updatedCart(){
+    cart['total'] = 0.0;
+    var sinQuan = cart['singleBeertha'];
+    document.getElementById("singleBeerthaQuantity").innerHTML = ("Big Beertha: " + cart['singleBeertha']);
+    cart['total'] += (sinQuan * 44);
+    var headQuan = cart['headCover'];
+    document.getElementById("headCoverQuantity").innerHTML = ("Head Cover: " + cart['headCover']);
+    cart['total'] += (headQuan * 7);
+    var plusQuan = cart['bigBeerthaPlus']
+    document.getElementById("beerthaPlusQuantity").innerHTML = ("Beertha Plus: " +cart['bigBeerthaPlus']);
+    cart['total'] += (plusQuan * 49);
+    var threeQuan = cart['beerthaParThree']
+    document.getElementById("parThreeQuantity").innerHTML = ("Par Three: " + cart['beerthaParThree']);
+    cart['total'] += (threeQuan * 117);
+    var fullQuan = cart['beerthaFullSet']
+    document.getElementById("fullSetQuantity").innerHTML = ("Full Set: " + cart['beerthaFullSet']);
+    cart['total'] += (fullQuan * 399);
+    document.getElementById("cartTotal").innerHTML = ("Total: $" + cart['total'] + ".00");
+}
+function emptyCart() {
     var cart = {
-      "singleBeertha": 0,
-      "beerthaHeadCover": 0,
-      "bigBeerthaPlus": 0,
-      "beerthaParThree": 0,
-      "beerthaFullSet": 0
+        "singleBeertha": 0,
+        "beerthaHeadCover": 0,
+        "bigBeerthaPlus": 0,
+        "beerthaParThree": 0,
+        "beerthaFullSet": 0,
+        "total": 0.0
     }
-  }
-
-  function displayBeertha(displayed) {
-    var elem = document.getElementById(displayed);
-    var main = document.getElementById("mainContainer");
-    elem.style.display = "block";
-    main.style.opacity = 0.5;
-  }
-
-  function closeTab(element) {
+}
+function changeImages(element){
+    var productImagesOne = ["{% static 'img/FullSizeRender_550x825.jpg' %}", "{% static 'img/singleBeerthaPhotos/Top_Wood_280x420.jpg' %}","{% static 'img/singleBeerthaPhotos/close_up_280x420.jpeg' %}"];
+    var productImagesTwo = ["{% static 'img/BeerthaCover.jpeg' %}"];
+    var productImagesThree = ["{% static 'img/UndercoverBeertha_550x825.jpeg' %}"];
+    var images = ["{% static 'img/FullSizeRender_550x825.jpg' %}", "{% static 'img/singleBeerthaPhotos/Top_Wood_280x420.jpg' %}","{% static 'img/singleBeerthaPhotos/close_up_280x420.jpeg' %}"];
+    var i = 0;
+    var renew = setInterval(function(){
+        if(images.length == i){
+            i = 0;
+        }
+        else {
+            var change = document.getElementById(element);
+            change.src = images[i];
+            i++;
+        }
+    },1000);
+}
+function closeTab(element) {
     var elem = document.getElementById(element);
     var main = document.getElementById("mainContainer");
     elem.style.display = "none";
     main.style.opacity = 1.0;
-  }
-  var slideIndex = 1;
-  showSlides(slideIndex);
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("sliderImages");
-    var dots = document.getElementsByClassName("demo");
-    var captionText = document.getElementById("caption");
-    if (n > slides.length) {
-      slideIndex = 1
-    }
-    if (n < 1) {
-      slideIndex = slides.length
-    }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    captionText.innerHTML = dots[slideIndex - 1].alt;
-  }
+}
 </script>
 
 </html>

@@ -11,9 +11,8 @@
   <script src="{% static 'node_modules/vivus/dist/vivus.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
-
 <body>
   <div id="loader">
     <svg id="beerthaLoader" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 222.8 273.59">
@@ -68,7 +67,8 @@
        we need to make the loader div cover everything.  -->
   <div id="mainContainer" class="hiddenOnLoad">
     <span class="hiddenOnLoad">{% include 'header.html' %}</span>
-    <div class="vidPlaceholder"></div>
+    <!-- <img src="{% static 'img/beerthaFigure1.jpg' %}" alt="render.jpg" class="imageHeaderImage">
+    <img src="{% static 'img/beerthaFigure2.jpg' %}" alt="render.jpg" class="imageHeaderImage"> -->
     <div class="card">
       <div class="container">
         <h2>About Beertha</h2>
@@ -82,11 +82,7 @@
         </p>
       </div>
     </div>
-<<<<<<< HEAD
-    <div style="float: right"class="card">
-=======
     <div style="float: right" class="card">
->>>>>>> ronak
       <div class="container">
         <p>Finally, the first ever beerbong in the shape of a full size golf driver. Simply pour a 12 ounce can into the opening at the foot of the club head, then grab the grip and let it rip. Once refreshed, The Big Beertha stores perfectly in
           your golf bag. A beerbong for a Gentleman (as well as a proper Lady, of course).</p>

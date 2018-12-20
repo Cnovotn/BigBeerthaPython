@@ -8,6 +8,12 @@
     margin: 1.5%;
     box-shadow: 0px 3px 15px rgba(00, 0, 00, 0.2);
 }
+.singleMainVideo{
+}
+#beerthaMadeVideos{
+    width: 80%;
+    margin: 10%;
+}
 .oneRowVideos{
     display: flex;
 }

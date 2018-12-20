@@ -11,24 +11,38 @@
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
     <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+    
 </head>
 <style>
 </style>
 <body>
     <div id="mainContainer">
         {% include 'header.html' %}
-        <div id="bodyContainer">
-            <div class=""
+        <div id="beerthasAcheivements">
+            <iframe  src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FBreakingParFSAZ%2Fvideos%2F1918678178181189%2F&show_text=0&width=560" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
         </div>
         {% include 'footer.html' %}
     </div>
 </body>
 <script src="http://vjs.zencdn.net/4.12/video.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <script>
-$('#html5-videos').lightGallery(); 
-$('#video-gallery').lightGallery({
-    videojs: true
-}); 
+$(document).ready(function (){
+    slideshowImages(1);
+});
+function slideshowImages(n){
+    var i;
+    var slideIndex = 1;
+    var slides = document.getElementsByClassName("imageSlides");
+    console.log(slides.length);
+    for (i = 0; i < slides.length; i++) {
+        var thisImage = slides[i];
+        thisImage.className += "hideImage"
+        console.log(slides[i] + " is a class");
+    }
+} 
 </script>
 </html>

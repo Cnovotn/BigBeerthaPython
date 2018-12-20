@@ -4,6 +4,7 @@
 .productCard{
   display: flex;
   overflow: auto;
+  height: 340px;
   background: #F5F5F5;
   box-shadow: 0px 3px 15px rgba(00, 0, 00, 0.2);
   border-radius: 5px;
@@ -18,14 +19,14 @@
 }
 .productCard img{
   width: 300px;
-  height: 370px;
+  height: 300px;
   box-shadow: 0px 3px 15px rgba(00, 0, 00, 0.2);
   border-radius: 5px;
 }
 .productCard h2{
   color: #66bd61;
 }
-.productCard button {
+.productCard button, .col button {
   background: #76cd71;
   padding: 10px;
   display: inline-block;
@@ -43,10 +44,29 @@
   background: #66bd61;
   transition: all .4s ease-in-out;
 }
+.verticalList{
+  display: contents;
+}
 .center{
   text-align: center;
 }
 .cartLogo{
   width: 10%;
   height: 10%;
+}
+#coverImages{
+  position:relative;
+  left: 0;
+  width: 300px;
+}
+#coverImages img{
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+#coverImages img.top:hover {
+  opacity:0;
 }
