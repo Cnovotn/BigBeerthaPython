@@ -13,14 +13,11 @@ import requests, json
 # import shopify
 
 def index(request):
-    request.session["singleBeertha"] = 0
-    request.session["beerthaHeadCover"] = 0
-    request.session["bigBeerthaPlus"] = 0
-    request.session["beerthaParThree"] = 0
-    request.session["beerthaFullSet"] = 0
+    checkCart(request) 
     return render(request, "index.html")
 
 def buyBeertha(request):
+    checkCart(request)
     context = {
         "singleBeertha" : request.session["singleBeertha"],
         "beerthaHeadCover" : request.session["beerthaHeadCover"],
@@ -31,6 +28,7 @@ def buyBeertha(request):
     return render(request, "buyBeertha.html", context)
 
 def socialPage(request):
+    checkCart(request)
     return render(request, "social.html")
 
 def contentSubmission(request):
@@ -71,6 +69,13 @@ def emptyCart(request):
     request.session["beerthaFullSet"] = 0
     return redirect("/buyBeertha")
 
+def checkCart(request):
+    if "singleBeertha" not in request.session:
+        request.session["singleBeertha"] = 0
+        request.session["beerthaHeadCover"] = 0
+        request.session["bigBeerthaPlus"] = 0
+        request.session["beerthaParThree"] = 0
+        request.session["beerthaFullSet"] = 0
 
 # # Replace the following with your shop URL
 # shop_url = "https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin"

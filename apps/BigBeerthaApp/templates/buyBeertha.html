@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static 'css/underline.css' %}">
   <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/buyBeertha.js' %}"></script>
   <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/buyBeertha.css' %}">
@@ -32,9 +33,127 @@
                     <p class="desc">
                     The OG in the plastic. The Big Beertha looks like a full sized golf driver, and stores best in your golf bag...only it's not a driver, its a highly adaptable drinking receptacle.
                     </p>
-                    <div class="buttons">
-                        <button class="add" onclick="addToCart('singleBeertha')">Add to Cart</button>
-                    </div>
+                    <!-- The buy button for the single beertha along with all of the shopify code -->
+                    <div id='product-component-dc7af7f7f31'></div>
+                    <script type="text/javascript">
+                    /*<![CDATA[*/
+                    (function () {
+                      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                      if (window.ShopifyBuy) {
+                        if (window.ShopifyBuy.UI) {
+                          ShopifyBuyInit();
+                        } else {
+                          loadScript();
+                        }
+                      } else {
+                        loadScript();
+                      }
+                
+                      function loadScript() {
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = scriptURL;
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                        script.onload = ShopifyBuyInit;
+                      }
+                
+                      function ShopifyBuyInit() {
+                        var client = ShopifyBuy.buildClient({
+                          domain: 'the-big-beertha.myshopify.com',
+                          storefrontAccessToken: '734d37c05405a98193de697cda4ea58d',
+                        });
+                
+                        ShopifyBuy.UI.onReady(client).then(function (ui) {
+                          ui.createComponent('product', {
+                            id: [10186607942],
+                            node: document.getElementById('product-component-dc7af7f7f31'),
+                            moneyFormat: '%24%7B%7Bamount%7D%7D',
+                            options: {
+                                "product": {
+                                    "variantId": "all",
+                                    "width": "240px",
+                                    "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": false,
+                                    "title": false,
+                                    "variantTitle": false,
+                                    "price": false,
+                                    "description": false,
+                                    "buttonWithQuantity": false,
+                                    "quantity": false
+                                    },
+                                    "styles": {
+                                    "product": {
+                                        "text-align": "right",
+                                        "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0",
+                                        "margin-bottom": "50px"
+                                        }
+                                    },
+                                    "compareAt": {
+                                        "font-size": "12px"
+                                    }
+                                    }
+                                },
+                                "cart": {
+                                    "contents": {
+                                    "button": true
+                                    },
+                                    "styles": {
+                                    "footer": {
+                                        "background-color": "#ffffff"
+                                    }
+                                    }
+                                },
+                                "modalProduct": {
+                                    "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "variantTitle": false,
+                                    "buttonWithQuantity": true,
+                                    "button": false,
+                                    "quantity": false
+                                    },
+                                    "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0px",
+                                        "margin-bottom": "0px"
+                                        }
+                                    }
+                                    }
+                                },
+                                "toggle": {
+                                    "styles": {
+                                    "count": {
+                                        "color": "#ffffff",
+                                        ":hover": {
+                                        "color": "#ffffff"
+                                        }
+                                    },
+                                    "iconPath": {
+                                        "fill": "#ffffff"
+                                    }
+                                    }
+                                },
+                                "productSet": {
+                                    "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                        "margin-left": "-20px"
+                                        }
+                                    }
+                                    }
+                                }
+                            }
+                          });
+                        });
+                      }
+                    })();
+                    /*]]>*/
+                    </script>
                 </div>
             </div>
         </div>
@@ -45,15 +164,133 @@
                     <img src="{% static 'img/BeerthaCover.jpeg' %}" alt="render.jpg" class="top">
                 </div>
                 <div class="productInfo">
-                <h1>Beertha Head Cover</h1>
-                <h2>$7</h2>
-                <p class="desc">
-                    Get your Big Beertha out on the course incognito, only unveiling it to your foursome when they least expect it. One brand new Big Beertha, fresh from the press, along with one of our custom club head covers.
-                </p>
-                <div class="buttons">
-                    <button class="add" onclick="addToCart('headCover')">Add to Cart</button>
+                    <h1>Beertha Head Cover</h1>
+                    <h2>$7</h2>
+                    <p class="desc">
+                        Get your Big Beertha out on the course incognito, only unveiling it to your foursome when they least expect it. One brand new Big Beertha, fresh from the press, along with one of our custom club head covers.
+                    </p>
+                    <div id='product-component-ed7e1712468'></div>
+                    <script type="text/javascript">
+                    /*<![CDATA[*/
+
+                    (function () {
+                    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                    if (window.ShopifyBuy) {
+                        if (window.ShopifyBuy.UI) {
+                        ShopifyBuyInit();
+                        } else {
+                        loadScript();
+                        }
+                    } else {
+                        loadScript();
+                    }
+
+                    function loadScript() {
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = scriptURL;
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                        script.onload = ShopifyBuyInit;
+                    }
+
+                    function ShopifyBuyInit() {
+                        var client = ShopifyBuy.buildClient({
+                        domain: 'the-big-beertha.myshopify.com',
+                        storefrontAccessToken: '734d37c05405a98193de697cda4ea58d',
+                        });
+
+                        ShopifyBuy.UI.onReady(client).then(function (ui) {
+                        ui.createComponent('product', {
+                            id: [10186617286],
+                            node: document.getElementById('product-component-ed7e1712468'),
+                            moneyFormat: '%24%7B%7Bamount%7D%7D',
+                            options: {
+                                "product": {
+                                    "variantId": "all",
+                                    "width": "240px",
+                                    "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": false,
+                                    "title": false,
+                                    "variantTitle": false,
+                                    "price": false,
+                                    "description": false,
+                                    "buttonWithQuantity": false,
+                                    "quantity": false
+                                    },
+                                    "styles": {
+                                    "product": {
+                                        "text-align": "right",
+                                        "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0",
+                                        "margin-bottom": "50px"
+                                        }
+                                    },
+                                    "compareAt": {
+                                        "font-size": "12px"
+                                    }
+                                    }
+                                },
+                                "cart": {
+                                    "contents": {
+                                    "button": true
+                                    },
+                                    "styles": {
+                                    "footer": {
+                                        "background-color": "#ffffff"
+                                    }
+                                    }
+                                },
+                                "modalProduct": {
+                                    "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "variantTitle": false,
+                                    "buttonWithQuantity": true,
+                                    "button": false,
+                                    "quantity": false
+                                    },
+                                    "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0px",
+                                        "margin-bottom": "0px"
+                                        }
+                                    }
+                                    }
+                                },
+                                "toggle": {
+                                    "styles": {
+                                    "count": {
+                                        "color": "#ffffff",
+                                        ":hover": {
+                                        "color": "#ffffff"
+                                        }
+                                    },
+                                    "iconPath": {
+                                        "fill": "#ffffff"
+                                    }
+                                    }
+                                },
+                                "productSet": {
+                                    "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                        "margin-left": "-20px"
+                                        }
+                                    }
+                                    }
+                                }
+                                }
+                                        });
+                                        });
+                                    }
+                                    })();
+                                    /*]]>*/
+                    </script>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -70,9 +307,127 @@
                     <p class="desc">
                         Get your Big Beertha out on the course incognito, only unveiling it to your foursome when they least expect it. One brand new Big Beertha, fresh from the press, along with one of our custom club head covers.
                     </p>
-                    <div class="buttons">
-                        <button class="add" onclick="addToCart('bigBeerthaPlus')">Add to Cart</button>
-                    </div>
+                    <div id='product-component-9425584fd3c'></div>
+                    <script type="text/javascript">
+                    /*<![CDATA[*/
+
+                    (function () {
+                    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                    if (window.ShopifyBuy) {
+                        if (window.ShopifyBuy.UI) {
+                        ShopifyBuyInit();
+                        } else {
+                        loadScript();
+                        }
+                    } else {
+                        loadScript();
+                    }
+
+                    function loadScript() {
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = scriptURL;
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                        script.onload = ShopifyBuyInit;
+                    }
+
+                    function ShopifyBuyInit() {
+                        var client = ShopifyBuy.buildClient({
+                        domain: 'the-big-beertha.myshopify.com',
+                        storefrontAccessToken: '734d37c05405a98193de697cda4ea58d',
+                        });
+
+                        ShopifyBuy.UI.onReady(client).then(function (ui) {
+                        ui.createComponent('product', {
+                            id: [10186624582],
+                            node: document.getElementById('product-component-9425584fd3c'),
+                            moneyFormat: '%24%7B%7Bamount%7D%7D',
+                            options: {
+                                "product": {
+                                    "variantId": "all",
+                                    "width": "240px",
+                                    "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": false,
+                                    "title": false,
+                                    "variantTitle": false,
+                                    "price": false,
+                                    "description": false,
+                                    "buttonWithQuantity": false,
+                                    "quantity": false
+                                    },
+                                    "styles": {
+                                    "product": {
+                                        "text-align": "right",
+                                        "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0",
+                                        "margin-bottom": "50px"
+                                        }
+                                    },
+                                    "compareAt": {
+                                        "font-size": "12px"
+                                    }
+                                    }
+                                },
+                                "cart": {
+                                    "contents": {
+                                    "button": true
+                                    },
+                                    "styles": {
+                                    "footer": {
+                                        "background-color": "#ffffff"
+                                    }
+                                    }
+                                },
+                                "modalProduct": {
+                                    "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "variantTitle": false,
+                                    "buttonWithQuantity": true,
+                                    "button": false,
+                                    "quantity": false
+                                    },
+                                    "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0px",
+                                        "margin-bottom": "0px"
+                                        }
+                                    }
+                                    }
+                                },
+                                "toggle": {
+                                    "styles": {
+                                    "count": {
+                                        "color": "#ffffff",
+                                        ":hover": {
+                                        "color": "#ffffff"
+                                        }
+                                    },
+                                    "iconPath": {
+                                        "fill": "#ffffff"
+                                    }
+                                    }
+                                },
+                                "productSet": {
+                                    "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                        "margin-left": "-20px"
+                                        }
+                                    }
+                                    }
+                                }
+                                }
+                                        });
+                                        });
+                                    }
+                                    })();
+                                    /*]]>*/
+                    </script>
                 </div>
             </div>
         </div>
@@ -88,9 +443,126 @@
                     <p class="desc">
                         Want more than one Big Beertha? Get 3 Beerthas with the Par 3 box and save money. You cannot beat this deal!
                     </p>
-                    <div class="buttons">
-                        <button class="add" onclick="addToCart('beerthaParThree')">Add to Cart</button>
-                    </div>
+                    <div id='product-component-08a4dbc8eff'></div>
+                    <script type="text/javascript">
+                    /*<![CDATA[*/
+                    (function () {
+                      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                      if (window.ShopifyBuy) {
+                        if (window.ShopifyBuy.UI) {
+                          ShopifyBuyInit();
+                        } else {
+                          loadScript();
+                        }
+                      } else {
+                        loadScript();
+                      }
+                
+                      function loadScript() {
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = scriptURL;
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                        script.onload = ShopifyBuyInit;
+                      }
+                
+                      function ShopifyBuyInit() {
+                        var client = ShopifyBuy.buildClient({
+                          domain: 'the-big-beertha.myshopify.com',
+                          storefrontAccessToken: '734d37c05405a98193de697cda4ea58d',
+                        });
+                
+                        ShopifyBuy.UI.onReady(client).then(function (ui) {
+                          ui.createComponent('product', {
+                            id: [10186632710],
+                            node: document.getElementById('product-component-08a4dbc8eff'),
+                            moneyFormat: '%24%7B%7Bamount%7D%7D',
+                            options: {
+                                "product": {
+                                    "variantId": "all",
+                                    "width": "240px",
+                                    "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": false,
+                                    "title": false,
+                                    "variantTitle": false,
+                                    "price": false,
+                                    "description": false,
+                                    "buttonWithQuantity": false,
+                                    "quantity": false
+                                    },
+                                    "styles": {
+                                    "product": {
+                                        "text-align": "right",
+                                        "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0",
+                                        "margin-bottom": "50px"
+                                        }
+                                    },
+                                    "compareAt": {
+                                        "font-size": "12px"
+                                    }
+                                    }
+                                },
+                                "cart": {
+                                    "contents": {
+                                    "button": true
+                                    },
+                                    "styles": {
+                                    "footer": {
+                                        "background-color": "#ffffff"
+                                    }
+                                    }
+                                },
+                                "modalProduct": {
+                                    "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "variantTitle": false,
+                                    "buttonWithQuantity": true,
+                                    "button": false,
+                                    "quantity": false
+                                    },
+                                    "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0px",
+                                        "margin-bottom": "0px"
+                                        }
+                                    }
+                                    }
+                                },
+                                "toggle": {
+                                    "styles": {
+                                    "count": {
+                                        "color": "#ffffff",
+                                        ":hover": {
+                                        "color": "#ffffff"
+                                        }
+                                    },
+                                    "iconPath": {
+                                        "fill": "#ffffff"
+                                    }
+                                    }
+                                },
+                                "productSet": {
+                                    "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                        "margin-left": "-20px"
+                                        }
+                                    }
+                                    }
+                                }
+                                }
+                                        });
+                                        });
+                                    }
+                                    })();
+                                    /*]]>*/
+                    </script>
                 </div>
             </div>
         </div>
@@ -106,29 +578,130 @@
                 Need a lot of Big Beerthas for an event or tourney? Or maybe you live in a frat house. Maybe you just enjoy the satisfaction one feels when extending a fresh new Beertha to good friends, thereby enriching their lives. The Full Set
                 includes 12 Big Beerthas delivered right to your door.
             </p>
-            <div class="buttons">
-              <button class="add" onclick="addToCart('beerthaFullSet')">Add to Cart</button>
-            </div>
+            <div id='product-component-dac1eef423c'></div>
+            <script type="text/javascript">
+            /*<![CDATA[*/
+        
+            (function () {
+              var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+              if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                  ShopifyBuyInit();
+                } else {
+                  loadScript();
+                }
+              } else {
+                loadScript();
+              }
+        
+              function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+              }
+        
+              function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                  domain: 'the-big-beertha.myshopify.com',
+                  storefrontAccessToken: '734d37c05405a98193de697cda4ea58d',
+                });
+        
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                  ui.createComponent('product', {
+                    id: [10186640838],
+                    node: document.getElementById('product-component-dac1eef423c'),
+                    moneyFormat: '%24%7B%7Bamount%7D%7D',
+                    options: {
+                        "product": {
+                            "variantId": "all",
+                            "width": "240px",
+                            "contents": {
+                            "img": false,
+                            "imgWithCarousel": false,
+                            "title": false,
+                            "variantTitle": false,
+                            "price": false,
+                            "description": false,
+                            "buttonWithQuantity": false,
+                            "quantity": false
+                            },
+                            "styles": {
+                            "product": {
+                                "text-align": "right",
+                                "@media (min-width: 601px)": {
+                                "max-width": "100%",
+                                "margin-left": "0",
+                                "margin-bottom": "50px"
+                                }
+                            },
+                            "compareAt": {
+                                "font-size": "12px"
+                            }
+                            }
+                        },
+                        "cart": {
+                            "contents": {
+                            "button": true
+                            },
+                            "styles": {
+                            "footer": {
+                                "background-color": "#ffffff"
+                            }
+                            }
+                        },
+                        "modalProduct": {
+                            "contents": {
+                            "img": false,
+                            "imgWithCarousel": true,
+                            "variantTitle": false,
+                            "buttonWithQuantity": true,
+                            "button": false,
+                            "quantity": false
+                            },
+                            "styles": {
+                            "product": {
+                                "@media (min-width: 601px)": {
+                                "max-width": "100%",
+                                "margin-left": "0px",
+                                "margin-bottom": "0px"
+                                }
+                            }
+                            }
+                        },
+                        "toggle": {
+                            "styles": {
+                            "count": {
+                                "color": "#ffffff",
+                                ":hover": {
+                                "color": "#ffffff"
+                                }
+                            },
+                            "iconPath": {
+                                "fill": "#ffffff"
+                            }
+                            }
+                        },
+                        "productSet": {
+                            "styles": {
+                            "products": {
+                                "@media (min-width: 601px)": {
+                                "margin-left": "-20px"
+                                }
+                            }
+                            }
+                        }
+                        }
+                                });
+                                });
+                            }
+                            })();
+                            /*]]>*/
+            </script>
           </div>
         </div>
       </div>
-      <div class="row">
-          <!-- <Make the checkout card look better  -->
-        <div class="col card" onload="updatedCart()">
-            <h1>Your Cart</h1>
-            <ul class="verticalList">
-                <li id="singleBeerthaQuantity">Big Beertha: 0</li>
-                <li id="headCoverQuantity">Head Cover: 0</li>
-                <li id="beerthaPlusQuantity">Beertha Plus: 0</li>
-                <li id="parThreeQuantity">Par Three: 0</li>
-                <li id="fullSetQuantity">Full Set: 0</li>
-                <li><h2 id="cartTotal">Total: $0.00</h2></li>
-            </ul>
-            <h1 id="cartTotal"></h1>
-            <div class="buttons">
-                <button class="add">View Cart</button>
-            </div>
-        </div>
     </div>
   {% include 'header.html' %}
   {% include 'footer.html' %}
